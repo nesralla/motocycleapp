@@ -1,0 +1,32 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+version: "3.4"
+
+services:
+  postgres:
+    image: postgres:15 # Você pode escolher a versão desejada
+    container_name: motocycle_postgres
+    environment:
+      POSTGRES_USER: admin # Nome de usuário do PostgreSQL
+      POSTGRES_PASSWORD: 2846Cycle # Senha do usuário
+      POSTGRES_DB: motocycle_db # Nome do banco de dados a ser criado
+    ports:
+      - "5432:5432" # Mapeia a porta 5432 do container para a máquina host
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persistência dos dados
+
+
+  # motocycleapi:
+  #   image: motocycleapi
+  #   build:
+  #     context: .
+  #     dockerfile: src/Motocycle.Api/Dockerfile
+  #     args:
+  #       - configuration=Debug
+  #   ports:
+  #     - 8080:8080
+  #     - 80:80
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #   volumes:
+  #     - ~/.vsdbg:/remote_debugger:rw
