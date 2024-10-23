@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Motocycle.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1442e9481beb78edaa6f4515d18664542592f86b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Motocycle.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Motocycle.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

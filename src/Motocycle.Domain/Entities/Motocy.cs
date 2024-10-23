@@ -1,17 +1,17 @@
 namespace Motocycle.Domain.Entities
 {
 
-    public class Motocycle
+    public class Motocy
     {
         public Guid Id { get; } // Identificador
         public int Year { get; private set; } // Ano
-        public string MotocycleModel { get; private set; } // Modelo
+        public string MotocyModel { get; private set; } // Modelo
         public string LicensePlate { get; private set; } // Placa (única)
 
-        public Motocycle(int year, string motocyclemodel, string licenseplate)
+        public Motocy(int year, string motocymodel, string licenseplate)
         {
             Year = year;
-            MotocycleModel = motocyclemodel;
+            MotocyModel = motocymodel;
             LicensePlate = licenseplate;
         }
 

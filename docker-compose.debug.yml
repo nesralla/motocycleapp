@@ -1,7 +1,4 @@
 # Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
-
-version: "3.4"
-
 services:
   postgres:
     image: postgres:15 # Você pode escolher a versão desejada
@@ -15,7 +12,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data # Persistência dos dados
 
-
+volumes:
+  postgres_data:
   # motocycleapi:
   #   image: motocycleapi
   #   build:

@@ -5,13 +5,17 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C700ED66-4C5C-429F-B56C-A50BE629ADEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Api", "src\Motocycle.Api\Motocycle.Api.csproj", "{80A9698E-D5E6-4AC2-A167-FD762DFC8B43}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Application", "src\Motocycle.Application\Motocycle.Application.csproj", "{CBC4EC05-8C4C-41D7-B5D8-51C7AC36F3C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Infra", "src\Motocycle.Infra\Motocycle.Infra.csproj", "{63906982-8851-41DF-944A-AEC498C7C660}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Domain", "src\Motocycle.Domain\Motocycle.Domain.csproj", "{D270DD63-941D-4441-AE87-DC3A0C0E193B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Domain.Core", "src\Motocycle.Domain.Core\Motocycle.Domain.Core.csproj", "{3611DCF5-8E98-4261-8B6E-DA46BF60FB60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Infra.CrossCutting.Commons", "src\Motocycle.Infra.CrossCutting.Commons\Motocycle.Infra.CrossCutting.Commons.csproj", "{ED2BEEBF-0D47-4510-956E-899E4DD8A06A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Infra.Data", "src\Motocycle.Infra.Data\Motocycle.Infra.Data.csproj", "{E8C5A1B6-481C-4946-9942-CC02A96512A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80A9698E-D5E6-4AC2-A167-FD762DFC8B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80A9698E-D5E6-4AC2-A167-FD762DFC8B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80A9698E-D5E6-4AC2-A167-FD762DFC8B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80A9698E-D5E6-4AC2-A167-FD762DFC8B43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBC4EC05-8C4C-41D7-B5D8-51C7AC36F3C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBC4EC05-8C4C-41D7-B5D8-51C7AC36F3C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBC4EC05-8C4C-41D7-B5D8-51C7AC36F3C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,11 +38,25 @@ Global
 		{D270DD63-941D-4441-AE87-DC3A0C0E193B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D270DD63-941D-4441-AE87-DC3A0C0E193B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D270DD63-941D-4441-AE87-DC3A0C0E193B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3611DCF5-8E98-4261-8B6E-DA46BF60FB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3611DCF5-8E98-4261-8B6E-DA46BF60FB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3611DCF5-8E98-4261-8B6E-DA46BF60FB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3611DCF5-8E98-4261-8B6E-DA46BF60FB60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2BEEBF-0D47-4510-956E-899E4DD8A06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2BEEBF-0D47-4510-956E-899E4DD8A06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2BEEBF-0D47-4510-956E-899E4DD8A06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2BEEBF-0D47-4510-956E-899E4DD8A06A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C5A1B6-481C-4946-9942-CC02A96512A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C5A1B6-481C-4946-9942-CC02A96512A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C5A1B6-481C-4946-9942-CC02A96512A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C5A1B6-481C-4946-9942-CC02A96512A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{80A9698E-D5E6-4AC2-A167-FD762DFC8B43} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
 		{CBC4EC05-8C4C-41D7-B5D8-51C7AC36F3C8} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
 		{63906982-8851-41DF-944A-AEC498C7C660} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
 		{D270DD63-941D-4441-AE87-DC3A0C0E193B} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
+		{3611DCF5-8E98-4261-8B6E-DA46BF60FB60} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
+		{ED2BEEBF-0D47-4510-956E-899E4DD8A06A} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
+		{E8C5A1B6-481C-4946-9942-CC02A96512A2} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
 	EndGlobalSection
 EndGlobal
