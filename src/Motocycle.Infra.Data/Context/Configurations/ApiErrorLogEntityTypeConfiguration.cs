@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Motocycle.Domain.Models;
 using Motocycle.Infra.Data.Base;
 
 namespace Motocycle.Infra.Data.Context.Configurations
