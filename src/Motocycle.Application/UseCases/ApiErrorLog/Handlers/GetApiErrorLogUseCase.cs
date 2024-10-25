@@ -2,13 +2,13 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Motocycle.Domain.Core.Interfaces;
-using Motocycle.Domain.Repositories;
 using Motocycle.Domain.Core.Notifications;
 using Motocycle.Domain.Interfaces.Services;
 using Motocycle.Domain.Interfaces.Repositories.Base;
 using Motocycle.Application.UseCases.ApiErrorLog.Request;
 using Motocycle.Application.UseCases.ApiErrorLog.Response;
 using Motocycle.Application.UseCases.Base;
+using Motocycle.Domain.Interfaces.Repositories;
 
 namespace Motocycle.Application.UseCases.ApiErrorLog.Handlers
 {
@@ -16,7 +16,7 @@ namespace Motocycle.Application.UseCases.ApiErrorLog.Handlers
     {
         public GetApiErrorLogUseCase(
             IHandler<DomainNotification> notifications,
-            Domain.Interfaces.Repositories.Base.IUnitOfWork unitOfWork,
+            IUnitOfWork unitOfWork,
             IMediator mediator,
             IApiErrorLogService baseService,
             IMapper mapper) : base(notifications, unitOfWork, mediator, baseService, mapper)

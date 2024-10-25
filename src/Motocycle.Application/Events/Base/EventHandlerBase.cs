@@ -2,6 +2,7 @@ using MediatR;
 using Motocycle.Domain.Core.Interfaces;
 using Motocycle.Domain.Core.Messages;
 using Motocycle.Domain.Core.Notifications;
+using Motocycle.Domain.Interfaces.Repositories;
 using Motocycle.Domain.Interfaces.Repositories.Base;
 
 namespace Motocycle.Application.Events.Base
