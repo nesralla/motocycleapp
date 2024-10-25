@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Motocycle.Domain.Repositories;
+using Motocycle.Domain.Interfaces.Repositories;
 using Motocycle.Infra.Data.Context;
 
 namespace Motocycle.Infra.Data.UoW

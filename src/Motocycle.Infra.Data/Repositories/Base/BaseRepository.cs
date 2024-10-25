@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Motocycle.Domain.Core.Models;
-using Motocycle.Domain.Repositories.Base;
+using Motocycle.Domain.Interfaces.Repositories.Base;
 using Motocycle.Infra.Data.Context;
 
 namespace Motocycle.Infra.Data.Repositories.Base

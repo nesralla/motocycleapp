@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Motocycle.Domain.Core.Models;
 
-namespace Motocycle.Domain.Repositories.Base
+namespace Motocycle.Domain.Interfaces.Repositories.Base
 {
     public interface IBaseRepository<TEntity> : IDisposable where TEntity : Entity
     {
