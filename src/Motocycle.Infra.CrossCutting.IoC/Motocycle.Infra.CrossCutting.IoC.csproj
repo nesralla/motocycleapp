@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Motocycle.Application\Motocycle.Application.csproj" />
+    <ProjectReference Include="..\Motocycle.Domain\Motocycle.Domain.csproj" />
+    <ProjectReference Include="..\Motocycle.Infra.CrossCutting.Commons\Motocycle.Infra.CrossCutting.Commons.csproj" />
+    <ProjectReference Include="..\Motocycle.Infra.Data\Motocycle.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
