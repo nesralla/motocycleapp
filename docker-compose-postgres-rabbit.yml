@@ -11,15 +11,16 @@ services:
       - "5432:5432" # Mapeia a porta 5432 do container para a máquina host
     volumes:
       - postgres_data:/var/lib/postgresql/data # Persistência dos dados
-  rabbitmq:
-    image: rabbitmq:3-management
-    container_name: motocycle_rabbitmq
+  localstack:
+    image: localstack/localstack
+    container_name: motocycle_localstack
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "4566:4566" # Porta padrão para a API do LocalStack
+      - "4510-4559:4510-4559" # Portas para serviços específicos (opcional)
     environment:
-      RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: 2846Cycle
-
+      - SERVICES=sqs,sns # Serviços que você quer habilitar
+      - DEBUG=1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Necessário para permitir que LocalStack crie contêineres
 volumes:
   postgres_data:

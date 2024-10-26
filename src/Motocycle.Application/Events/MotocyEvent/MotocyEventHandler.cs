@@ -1,17 +1,17 @@
-﻿using RabbitMQ.Client;
-using Motocycle.Application.Events.Base;
+﻿using Motocycle.Application.Events.Base;
 using Motocycle.Domain.Core.Interfaces;
 using Motocycle.Domain.Core.Notifications;
 using Motocycle.Domain.Interfaces.Repositories;
 using Motocycle.Infra.CrossCutting.Commons.Extensions;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
+using SQS.ServiceBus;
 
 namespace Motocycle.Application.Events.MotocyEvent
 {
     public class MotocyEventHandler : EventHandlerBase<MotocyEvent>
     {
 
-        private readonly IRecordedExchange _snsTopic;
+        private readonly IPublishTopic _snsTopic;
         private readonly QueuesProvider.TopicProducer _topic;
 
         public MotocyEventHandler(

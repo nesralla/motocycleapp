@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-//using SQS.ServiceBus.Providers;
+using SQS.ServiceBus.Providers;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Motocycle.Application.MessageBroker.Base;
@@ -12,10 +12,10 @@ namespace Motocycle.Application.MessageBroker
     public class Worker : ConsumerBase, IHostedService
     {
         private readonly ILogger _logger;
-        private readonly MessageBrokerProvider _messageBrokerSettings;
+        private readonly SQS.ServiceBus.Providers.MessageBrokerProvider _messageBrokerSettings;
         private Timer _timer = null!;
 
-        public Worker(ILogger<Worker> logger, MessageBrokerProvider messageBrokerSettings, IServiceProvider serviceProvider, QueuesProvider queues)
+        public Worker(ILogger<Worker> logger, SQS.ServiceBus.Providers.MessageBrokerProvider messageBrokerSettings, IServiceProvider serviceProvider, QueuesProvider queues)
             : base(serviceProvider, queues)
         {
             _logger = logger;

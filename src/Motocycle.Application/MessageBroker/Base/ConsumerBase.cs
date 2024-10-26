@@ -1,6 +1,6 @@
 ﻿using System;
 using MediatR;
-//using SQS.ServiceBus;
+using SQS.ServiceBus;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
