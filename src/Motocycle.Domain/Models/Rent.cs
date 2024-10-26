@@ -6,13 +6,37 @@ namespace Motocycle.Domain.Models
 {
     public class Rent : Entity
     {
-        public Guid Id { get; } // Identificador
+        public string Identification { get; set; } // Identificação
         public Guid DeliverymanId { get; set; } // Identificador do entregador
         public Guid MotocyId { get; set; } // Identificador da moto
         public DateTime StartDate { get; set; } // Data de início
         public DateTime EndDate { get; set; } // Data de término
         public DateTime PreviousEndDate { get; set; } // Data prevista de término
+        public StatusTypes Status { get; set; } // Status
+        public decimal PreviousValue { get; set; } // Valor previsto
+        public decimal FinishValue { get; set; } // Valor final
 
+        public int RentDays { get; set; }
+        public Plan RentPlan { get; set; }
+        public RentPlans RentTypePlan { get; set; }
+
+        public Rent(string identification, Guid deliverymanId, Guid motocyId,
+        DateTime startDate, DateTime endDate, DateTime previousEndDate,
+        StatusTypes status, RentPlans rentTypePlan)
+        {
+            Identification = identification;
+            DeliverymanId = deliverymanId;
+            MotocyId = motocyId;
+            StartDate = startDate;
+            EndDate = endDate;
+            PreviousEndDate = previousEndDate;
+            Status = status;
+            RentDays = (EndDate - StartDate).Days;
+            RentTypePlan = rentTypePlan;
+            RentPlan = new Plan(rentTypePlan);
+            PreviousValue = RentPlan.TotalCost();
+            FinishValue = PreviousValue;
+        }
 
     }
 }

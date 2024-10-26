@@ -5,6 +5,8 @@
 
         public QueuesConsumer Consumers { get; set; }
         public QueuesProducer Producers { get; set; }
+        public TopicProducer TopicProducers { get; set; }
+
 
         public class QueuesConsumer
         {
@@ -16,6 +18,12 @@
         {
             public string RechargeProcess { get; set; }
             public string ClientNotificationSender { get; set; }
+        }
+        public class TopicProducer
+        {
+            public string MotocycleEvent { get; set; }
+            public string RentEvent { get; set; }
+            public string DeliverymanEvent { get; set; }
         }
     }
 }

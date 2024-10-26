@@ -177,6 +177,22 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.7.400.40, )"
+            },
+            "AWSSDK.Extensions.NETCore.Setup": {
+              "target": "Package",
+              "version": "[3.7.301, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.405.4, )"
+            },
+            "AWSSDK.SQS": {
+              "target": "Package",
+              "version": "[3.7.400.40, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -239,6 +255,10 @@
               "target": "Package",
               "version": "[1.1.1, )"
             },
+            "SQS.ServiceBus": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[4.1.0, )"
@@ -255,9 +275,17 @@
               "target": "Package",
               "version": "[8.4.0, )"
             },
+            "Serilog.Sinks.AmazonS3": {
+              "target": "Package",
+              "version": "[1.5.2, )"
+            },
             "Serilog.Sinks.Async": {
               "target": "Package",
               "version": "[2.0.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

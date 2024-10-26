@@ -11,14 +11,15 @@ services:
       - "5432:5432" # Mapeia a porta 5432 do container para a máquina host
     volumes:
       - postgres_data:/var/lib/postgresql/data # Persistência dos dados
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: motocycle_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: 2846Cycle
 
 volumes:
   postgres_data:
-  # motocycleapi:
-  #   image: motocycleapi
-  #   build:
-  #     context: .
-  #     dockerfile: src/Motocycle.Api/Dockerfile
-  #   ports:
-  #     - 8080:8080
-  #     - 80:80

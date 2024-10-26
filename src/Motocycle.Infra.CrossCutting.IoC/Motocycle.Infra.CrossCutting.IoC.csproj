@@ -5,6 +5,7 @@
     <ProjectReference Include="..\Motocycle.Domain\Motocycle.Domain.csproj" />
     <ProjectReference Include="..\Motocycle.Infra.CrossCutting.Commons\Motocycle.Infra.CrossCutting.Commons.csproj" />
     <ProjectReference Include="..\Motocycle.Infra.Data\Motocycle.Infra.Data.csproj" />
+    <ProjectReference Include="..\Motocycle.Infra.CrossCutting.MessageBroker\Motocycle.Infra.CrossCutting.MessageBroker.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
