@@ -11,7 +11,7 @@ using System.Diagnostics;
 using Motocycle.Infra.CrossCutting.Commons.HttpFactory.Interfaces;
 using Motocycle.Infra.CrossCutting.Commons.HttpFactory.Types;
 
-namespace PXBank.CiotProviderService.Infra.CrossCutting.Commons.HttpFactory.Services
+namespace Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services
 {
     public class HttpFactoryService : IHttpFactoryService
     {

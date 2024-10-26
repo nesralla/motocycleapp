@@ -12,11 +12,11 @@ using Motocycle.Domain.Core.Notifications;
 using Motocycle.Domain.Interfaces.Services;
 using Motocycle.Domain.Services;
 using Motocycle.Infra.CrossCutting.Commons.HttpFactory.Interfaces;
-using PXBank.CiotProviderService.Infra.CrossCutting.Commons.HttpFactory.Services;
 using Motocycle.Infra.CrossCutting.Commons.HttpFactory.Policy;
 using Motocycle.Application.UseCases.ApiErrorLog.Request;
 using Motocycle.Application.UseCases.ApiErrorLog.Response;
 using Motocycle.Application.UseCases.ApiErrorLog.Handlers;
+using Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services;
 
 namespace Motocycle.Infra.CrossCutting.IoC
 {
