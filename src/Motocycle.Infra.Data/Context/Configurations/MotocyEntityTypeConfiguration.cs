@@ -13,6 +13,8 @@ namespace Motocycle.Infra.Data.Context.Configurations
 
             builder.Property(x => x.Id)
                 .HasColumnType("uuid");
+            builder.Property(x => x.Identification)
+                .HasColumnType("uuid");
             builder.Property(x => x.Year)
                 .HasColumnType("int");
             builder.Property(x => x.MotocyModel)

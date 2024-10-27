@@ -36,6 +36,38 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "Motocycle.Api": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:5002",
+      "applicationUrl": "http://localhost:5002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AWS_ACCESS_KEY_ID": "",
+        "AWS_DEFAULT_REGION": "us-east-1",
+        "AWS_SECRET_ACCESS_KEY": "",
+        "DATABASE_HOST": "localhost:5432",
+        "DATABASE_PASSWORD": "2846Cycle",
+        "DATABASE_USER": "admin"
+      }
+    },
+    "[DEV]Motocycle.Api": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:5002",
+      "applicationUrl": "http://localhost:5002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AWS_ACCESS_KEY_ID": "",
+        "AWS_DEFAULT_REGION": "us-east-1",
+        "AWS_SECRET_ACCESS_KEY": "",
+        "DATABASE_HOST": "localhost:5432",
+        "DATABASE_PASSWORD": "2846Cycle",
+        "DATABASE_USER": "admin"
+      }
     }
   }
 }

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Motocycle.Domain.Core.Interfaces;
 using Motocycle.Domain.Core.Notifications;
+using Motocycle.Domain.Entities;
 using Motocycle.Domain.Interfaces.Repositories;
 using Motocycle.Domain.Interfaces.Services;
 using Motocycle.Domain.Interfaces.Validation;
@@ -14,17 +15,13 @@ using Motocycle.Domain.Services.Base;
 namespace Motocycle.Domain.Services
 {
 
-    public class MotocyService : BaseServiceValidation<Motocy>, IMotocyService
+    public class MotocyService(
+        IHandler<DomainNotification> notifications,
+        IMotocyRepository repository,
+        IRegisterValidation<Motocy> registerValidation) : BaseServiceValidation<Motocy>(repository, notifications, registerValidation), IMotocyService
     {
         public readonly IConfiguration _configuration;
-        private readonly IMotocyRepository _repository;
-        public MotocyService(
-            IHandler<DomainNotification> notifications,
-            IMotocyRepository repository,
-            IRegisterValidation<Motocy> registerValidation) : base(repository, notifications, registerValidation)
-        {
-            _repository = repository;
-        }
+        private readonly IMotocyRepository _repository = repository;
 
         public async Task<Motocy> GetByPlateAsync(string plate)
         {

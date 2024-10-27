@@ -21,7 +21,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
   </ItemGroup>
  <ItemGroup>
-    <Folder Include="Configurations\Swagger\Examples\" />
+    <Folder Include="Configurations\Swagger\" />
   </ItemGroup>
  <ItemGroup>
    <ProjectReference Include="..\Motocycle.Infra.CrossCutting.Commons\Motocycle.Infra.CrossCutting.Commons.csproj" />

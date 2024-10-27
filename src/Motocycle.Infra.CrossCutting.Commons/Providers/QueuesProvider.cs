@@ -10,13 +10,13 @@
 
         public class QueuesConsumer
         {
-            public string RechargeProcess { get; set; }
+            public string MotocycleProcess { get; set; }
             public int RetryLimit { get; set; }
         }
 
         public class QueuesProducer
         {
-            public string RechargeProcess { get; set; }
+            public string MotocycleProcess { get; set; }
             public string ClientNotificationSender { get; set; }
         }
         public class TopicProducer

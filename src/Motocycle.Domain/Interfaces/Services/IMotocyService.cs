@@ -5,6 +5,7 @@ namespace Motocycle.Domain.Interfaces.Services
 {
     public interface IMotocyService : IBaseServiceEntity<Motocy>
     {
+
         Task<Motocy> GetByPlateAsync(string plate);
         Task<Motocy> GetDefaultMotoAsync();
 

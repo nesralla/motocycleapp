@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Motocycle.Domain.Core.Messages;
 
-namespace Motocycle.Application.Commons.Responses
+namespace Motocycle.Application.UseCases.Moto.Response
 {
-    public class MotocyResponse : ResponseBase
+    public class MotoResponse : ResponseBase
     {
         public Guid Id { get; set; }
         public string Identification { get; set; } // Identificador

@@ -11,12 +11,5 @@ namespace Motocycle.Domain.Interfaces.Repositories
 
         Task<bool> CommitAsync();
     }
-
-    public interface IMotocyRepository : IBaseRepository<Motocy>
-    {
-        Task<Motocy> GetByPlateAsync(string plate);
-        Task<Motocy> GetDefaultAsync();
-
-    }
 }
 

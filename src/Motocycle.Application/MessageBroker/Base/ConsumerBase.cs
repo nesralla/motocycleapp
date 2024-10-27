@@ -6,21 +6,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
 using Motocycle.Domain.Core.Interfaces;
 using Motocycle.Domain.Core.Notifications;
+using Motocycle.Application.UseCases.Moto.Request;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
 
 namespace Motocycle.Application.MessageBroker.Base
 {
-    public abstract class ConsumerBase
+    public abstract class ConsumerBase(IServiceProvider serviceProvider, QueuesProvider queues)
     {
         private readonly int _waitTimeSeconds = 5;
-        private readonly IServiceProvider _serviceProvider;
-        private readonly QueuesProvider.QueuesConsumer _queues;
+        private readonly IServiceProvider _serviceProvider = serviceProvider;
+        private readonly QueuesProvider.QueuesConsumer _queues = queues.Consumers;
         protected IHandler<DomainNotification> Notifications { get; set; }
-
-        protected ConsumerBase(IServiceProvider serviceProvider, QueuesProvider queues)
-        {
-            _queues = queues.Consumers;
-            _serviceProvider = serviceProvider;
-        }
 
         protected async Task Consume()
         {
@@ -31,7 +27,7 @@ namespace Motocycle.Application.MessageBroker.Base
 
             try
             {
-                await ProcessCreateProductAsync(receiveEndpoint, mediator);
+                await ProcessCreateMotocyAsync(receiveEndpoint, mediator);
             }
             catch (Exception e)
             {
@@ -40,11 +36,11 @@ namespace Motocycle.Application.MessageBroker.Base
             }
         }
 
-        private async Task ProcessCreateProductAsync(IReceiveEndpoint receiveEndpoint, IMediator mediator)
+        private async Task ProcessCreateMotocyAsync(IReceiveEndpoint receiveEndpoint, IMediator mediator)
         {
-            var request = await receiveEndpoint.GetTopicMessage<PublishVinculatedWorkCardRequest>(_queues.VinculatedWorkCard, _waitTimeSeconds);
+            var request = await receiveEndpoint.GetTopicMessage<MotoRequest>(_queues.MotocycleProcess, _waitTimeSeconds);
             if (request is not null)
-                await mediator.Send(request.WorkCardInfo);
+                _ = await mediator.Send(request);
         }
     }
 }

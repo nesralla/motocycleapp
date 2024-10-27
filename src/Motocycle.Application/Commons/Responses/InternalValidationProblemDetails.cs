@@ -8,8 +8,8 @@ namespace Motocycle.Application.Commons.Responses
 {
     public class InternalValidationProblemDetails
     {
-        public string Title { get; set; }
-        public IEnumerable<ErrrorDetail> Errors { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public IEnumerable<ErrrorDetail> Errors { get; set; } = Enumerable.Empty<ErrrorDetail>();
 
         protected InternalValidationProblemDetails()
         {
