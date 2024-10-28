@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Motocycle.Api.Configurations.HealthChecks.Checks;
+using Motocycle.Infra.CrossCutting.Commons.Providers;
+using Motocycle.Api.Configurations.HealthChecks.Model;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
 
 namespace Motocycle.Api.Configurations.HealthChecks
 {

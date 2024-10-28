@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace PXBank.FinancialServiceHub.Application.Services;
+namespace Motocycle.Application.Services;
 
 public interface ICacheService
 {

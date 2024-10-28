@@ -7,12 +7,22 @@ using Motocycle.Infra.Data.Repositories.Base;
 
 namespace Motocycle.Infra.Data.Repositories
 {
-    public class MotocyRepository : BaseRepository<Motocy>
+    public class MotocyRepository : BaseRepository<Motocy>, IMotocyRepository
     {
         public MotocyRepository(ApplicationDbContext context) : base(context)
         {
         }
+        public async Task<List<Motocy>> AddRangeAsync(List<Motocy> entities)
+        {
+            await DbSet.AddRangeAsync(entities);
+            return entities;
+        }
 
+        public async Task DeleteAll()
+        {
+            var list = await DbSet.ToListAsync();
+            DbSet.RemoveRange(list);
+        }
         public async Task<Motocy> GetByPlateAsync(string plate)
         {
             var motocy = await DbSet.AsNoTracking().FirstOrDefaultAsync(x => x.LicensePlate == plate);

@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Motocycle.Infra.CrossCutting.Commons.Providers;
 
 namespace Motocycle.Api.Configurations.HealthChecks.Checks
 {

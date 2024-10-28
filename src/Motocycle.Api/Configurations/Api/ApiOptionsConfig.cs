@@ -1,5 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Motocycle.Domain.Core.Notifications;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
+using Motocycle.Infra.CrossCutting.Commons.Providers;
 
 namespace Motocycle.Api.Configurations.Api
 {

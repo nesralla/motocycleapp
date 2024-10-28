@@ -2,17 +2,20 @@ using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using OpenIddict.Validation.AspNetCore;
-using Microsoft.AspNetCore.Authorization;
+using Motocycle.Domain.Core;
+using Motocycle.Domain.Core.Notifications;
+using Motocycle.Domain.Core.Interfaces;
+using Motocycle.Application.Commons.Responses;
+using Motocycle.Domain.Core.Messages;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
 
-namespace Motocycla.Api.Controllers.Base
+namespace Motocycle.Api.Controllers.Base
 {
     [ApiController]
     [Produces("application/json")]
     [Consumes("application/json")]
     [Route("/api/v{v:apiVersion}/[controller]")]
-    [Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)]
-    public class MainController : Controller
+    public class MainController : ControllerBase
     {
         protected IHandler<DomainNotification> Notifications { get; }
 

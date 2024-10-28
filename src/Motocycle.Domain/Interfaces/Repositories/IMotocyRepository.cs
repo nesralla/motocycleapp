@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Motocycle.Domain.Interfaces.Repositories.Base;
 using Motocycle.Domain.Models;
 
-namespace Motocycle.Domain.Entities
+namespace Motocycle.Domain.Models
 {
     public interface IMotocyRepository : IBaseRepository<Motocy>
     {

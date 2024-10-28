@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Motocycle.Infra.CrossCutting.Commons.Providers;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
+using Motocycle.Api.Configurations.HealthChecks.Model;
 
 namespace Motocycle.Api.Configurations.HealthChecks.Checks
 {

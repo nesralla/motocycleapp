@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
+using Motocycle.Application.Commons.Responses;
+using Motocycle.Application.UseCases.ApiErrorLog.Request;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
 
 namespace Motocycle.Api.Middleware
 {

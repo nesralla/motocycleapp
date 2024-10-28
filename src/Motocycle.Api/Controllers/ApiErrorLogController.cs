@@ -4,8 +4,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Swashbuckle.AspNetCore.Annotations;
-using Microsoft.AspNetCore.Authorization;
-
+using Motocycle.Domain.Core.Notifications;
+using Motocycle.Domain.Core.Interfaces;
+using Motocycle.Application.Commons.Responses;
+using Motocycle.Domain.Enums;
+using Motocycle.Application.UseCases.ApiErrorLog.Request;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
+using Motocycle.Api.Controllers.Base;
 namespace Motocycle.Api.Controllers
 {
     public class ApiErrorLogController : MainController
@@ -21,7 +26,7 @@ namespace Motocycle.Api.Controllers
         /// Get Errors Report
         /// </summary>
         /// <returns></returns>
-        [HttpGet("{format}"), Authorize(Policy = PolicyProvider.AdministrationPolicy)]
+        [HttpGet("{format}")]
         [SwaggerResponse(StatusCodes.Status200OK, null, typeof(byte[]))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
         public async Task<IActionResult> GetAsync(ReportFormat format, [FromQuery] DateTime startDate, DateTime endDate)

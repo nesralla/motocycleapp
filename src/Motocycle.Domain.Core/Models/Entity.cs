@@ -10,6 +10,10 @@ namespace Motocycle.Domain.Core.Models
         public bool IsDeleted { get; set; }
         public bool IsClosed { get; set; }
 
+        public Entity()
+        {
+
+        }
 
         public override bool Equals(object obj)
         {

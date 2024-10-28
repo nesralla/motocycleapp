@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Infra.CrossCuttin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Infra.CrossCutting.MessageBroker", "src\Motocycle.Infra.CrossCutting.MessageBroker\Motocycle.Infra.CrossCutting.MessageBroker.csproj", "{F2538DF9-6F35-43BC-B72C-626DDB3C404F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motocycle.Api", "src\Motocycle.Api\Motocycle.Api.csproj", "{40CFCB39-C67C-45EF-AF85-7FEF3D9A6C19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{F2538DF9-6F35-43BC-B72C-626DDB3C404F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2538DF9-6F35-43BC-B72C-626DDB3C404F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2538DF9-6F35-43BC-B72C-626DDB3C404F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40CFCB39-C67C-45EF-AF85-7FEF3D9A6C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40CFCB39-C67C-45EF-AF85-7FEF3D9A6C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40CFCB39-C67C-45EF-AF85-7FEF3D9A6C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40CFCB39-C67C-45EF-AF85-7FEF3D9A6C19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CBC4EC05-8C4C-41D7-B5D8-51C7AC36F3C8} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
@@ -65,5 +71,6 @@ Global
 		{E8C5A1B6-481C-4946-9942-CC02A96512A2} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
 		{598EBC5F-E00F-49DC-A6F5-26051A48C968} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
 		{F2538DF9-6F35-43BC-B72C-626DDB3C404F} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
+		{40CFCB39-C67C-45EF-AF85-7FEF3D9A6C19} = {C700ED66-4C5C-429F-B56C-A50BE629ADEA}
 	EndGlobalSection
 EndGlobal

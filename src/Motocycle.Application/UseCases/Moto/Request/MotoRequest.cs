@@ -9,6 +9,7 @@ namespace Motocycle.Application.UseCases.Moto.Request
 {
     public class MotoRequest : CommandRequest<MotoResponse>
     {
+        public Guid Id { get; set; }
         public string Identification { get; set; }
         public int Year { get; set; }
         public string MotocyModel { get; set; }

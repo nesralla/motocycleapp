@@ -17,6 +17,14 @@ using Motocycle.Application.UseCases.ApiErrorLog.Request;
 using Motocycle.Application.UseCases.ApiErrorLog.Response;
 using Motocycle.Application.UseCases.ApiErrorLog.Handlers;
 using Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services;
+using Motocycle.Infra.Data.Repositories;
+using Motocycle.Domain.Models;
+using Motocycle.Domain.Interfaces.Validation;
+using Motocycle.Domain.Validations.Motocy;
+using Motocycle.Application.UseCases.Moto.Request;
+using Motocycle.Application.UseCases.Moto.Response;
+using Motocycle.Application.UseCases.Moto.Handlers;
+using Motocycle.Application.Events.MotocyEvent;
 
 namespace Motocycle.Infra.CrossCutting.IoC
 {
@@ -34,6 +42,8 @@ namespace Motocycle.Infra.CrossCutting.IoC
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IMotocyRepository, MotocyRepository>();
+
             return services;
         }
 
@@ -42,6 +52,8 @@ namespace Motocycle.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<DomainNotification>, DomainNotificationHandler>();
 
             services.AddScoped<IApiErrorLogService, ApiErrorLogService>();
+            services.AddScoped<IMotocyService, MotocyService>();
+            services.AddScoped<IRegisterValidation<Motocy>, RegisterMotoValidation>();
 
             services.AddScoped<IHttpFactoryService, HttpFactoryService>();
             services.AddHttpClient(typeof(HttpFactoryService).Name)
@@ -53,10 +65,12 @@ namespace Motocycle.Infra.CrossCutting.IoC
 
         public static IServiceCollection RegisterApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            // services.AddScoped<ICallbackAppService, CallbackAppService>();
-
+            services.AddScoped<INotificationHandler<MotocyEvent>, MotocyEventHandler>();
             services.AddScoped<IRequestHandler<GetErrorsRequest, GetErrorsResponse>, GetApiErrorLogUseCase>();
-            //services.AddScoped<IRequestHandler<ApiErrorLogRequest, ApiErrorLogResponse>, CreateApiErrorLogHandler>();
+            services.AddScoped<IRequestHandler<ApiErrorLogRequest, ApiErrorLogResponse>, CreateApiErrorLogUseCase>();
+            services.AddScoped<IRequestHandler<MotoRequest, MotoResponse>, CreateMotocycleUseCase>();
+
+
 
 
 

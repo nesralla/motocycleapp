@@ -7,13 +7,24 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using System.Text.Json.Serialization;
-using OpenIddict.Validation.AspNetCore;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Motocycle.Infra.Data.Context;
+using Motocycle.Api.Configurations.HealthChecks;
+using Motocycle.Api.Filter;
+using Motocycle.Infra.CrossCutting.Commons.Extensions;
+using Motocycle.Domain.Validations.ApiErrorLog;
+using Motocycle.Domain.Validations.Extensions;
+using Motocycle.Api.Configurations.Swagger;
+using Motocycle.Infra.CrossCutting.Commons.Providers;
+using Motocycle.Infra.Data;
+using Motocycle.Api.Middleware;
+using Motocycle.Infra.CrossCutting.Commons.Middlewares;
 
 namespace Motocycle.Api.Configurations.Api
 {
@@ -74,7 +85,7 @@ namespace Motocycle.Api.Configurations.Api
                             .AllowAnyHeader());
             });
 
-            services.AddStorageConfiguration(configuration);
+            //services.AddStorageConfiguration(configuration);
 
 
 
@@ -111,13 +122,7 @@ namespace Motocycle.Api.Configurations.Api
 
             app.UseStaticFiles();
 
-            app.UseAuthentication();
-            app.UseAuthorization();
-
             app.UseHsts();
-
-            app.UseCustomAuth();
-
 
             app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
         }

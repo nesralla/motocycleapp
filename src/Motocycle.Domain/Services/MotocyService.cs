@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Motocycle.Domain.Core.Interfaces;
 using Motocycle.Domain.Core.Notifications;
-using Motocycle.Domain.Entities;
 using Motocycle.Domain.Interfaces.Repositories;
 using Motocycle.Domain.Interfaces.Services;
 using Motocycle.Domain.Interfaces.Validation;
