@@ -12,10 +12,10 @@ namespace Motocycle.Infra.Data.Context.Configurations
             base.Configure(builder);
 
             builder.Property(x => x.DeliverymanId)
-                .HasColumnType("uuid")
+
                 .IsRequired();
             builder.Property(x => x.MotocyId)
-                .HasColumnType("uuid")
+
                 .IsRequired();
             builder.Property(x => x.StartDate)
                 .HasColumnType("date")
@@ -26,6 +26,24 @@ namespace Motocycle.Infra.Data.Context.Configurations
             builder.Property(x => x.PreviousEndDate)
                 .HasColumnType("date")
                 .IsRequired();
+            builder.Property(x => x.PreviousValue)
+                .HasColumnType("decimal(10,2)");
+            builder.Property(x => x.FinishValue)
+                .HasColumnType("decimal(10,2)");
+            builder.Property(x => x.RentDays)
+                .HasColumnType("int");
+            builder.Property(x => x.Status)
+                .HasColumnType("int");
+
+            builder.HasOne(x => x.Motocy)
+                .WithMany(f => f.Rents)
+                .HasForeignKey(x => x.MotocyId);
+
+            builder.HasOne(x => x.Deliveryman)
+                .WithMany(f => f.Rents)
+                .HasForeignKey(x => x.DeliverymanId);
+
+
         }
     }
 }

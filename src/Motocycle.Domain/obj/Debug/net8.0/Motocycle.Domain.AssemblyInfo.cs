@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Motocycle.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3953fdf7993d5858c5d8cec3f9c5ce4c229f7765")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15307c9b6f3b3ce4eb819e37dac284e3ead9f4f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Motocycle.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Motocycle.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -19,24 +19,9 @@ namespace Motocycle.Domain.Models
         public int RentDays { get; set; }
         public Plan RentPlan { get; set; }
         public RentPlans RentTypePlan { get; set; }
+        public Motocy Motocy { get; set; }
+        public Deliveryman Deliveryman { get; set; }
 
-        public Rent(string identification, Guid deliverymanId, Guid motocyId,
-        DateTime startDate, DateTime endDate, DateTime previousEndDate,
-        StatusTypes status, RentPlans rentTypePlan)
-        {
-            Identification = identification;
-            DeliverymanId = deliverymanId;
-            MotocyId = motocyId;
-            StartDate = startDate;
-            EndDate = endDate;
-            PreviousEndDate = previousEndDate;
-            Status = status;
-            RentDays = (EndDate - StartDate).Days;
-            RentTypePlan = rentTypePlan;
-            RentPlan = new Plan(rentTypePlan);
-            PreviousValue = RentPlan.TotalCost();
-            FinishValue = PreviousValue;
-        }
 
     }
 }

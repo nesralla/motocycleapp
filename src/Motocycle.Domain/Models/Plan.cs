@@ -4,15 +4,11 @@ namespace Motocycle.Domain.Models
 {
     public class Plan
     {
-        public RentPlans Type { get; private set; }
-        public int DurationDays { get; private set; }
-        public decimal CostPerDay { get; private set; }
+        public RentPlans Type { get; set; }
+        public int DurationDays { get; set; }
+        public decimal CostPerDay { get; set; }
 
-        public Plan(RentPlans type)
-        {
-            Type = type;
-            (DurationDays, CostPerDay) = GetPlanDetail(type);
-        }
+
 
         private (int duration, decimal cost) GetPlanDetail(RentPlans type)
         {

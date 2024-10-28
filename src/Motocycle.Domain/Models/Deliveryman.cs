@@ -13,17 +13,10 @@ namespace Motocycle.Domain.Models
         public string DriveLicense { get; set; } // Número da CNH (único)
         public LicenseTypes LicenseType { get; set; } // Tipo da CNH
         public string DriveLicenseFile { get; set; } // Caminho da imagem da CNH
+        public ICollection<Rent> Rents { get; set; }
 
-        public Deliveryman(string identification, string name, string nationalID, DateTime dateBorn, string driveLicense, LicenseTypes licenseType, string driveLicenseFile)
-        {
-            Identification = identification;
-            Name = name;
-            NationalID = nationalID;
-            DateBorn = dateBorn;
-            DriveLicense = driveLicense;
-            LicenseType = licenseType;
-            DriveLicenseFile = driveLicenseFile;
-        }
+
+
 
     }
 
