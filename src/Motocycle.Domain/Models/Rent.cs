@@ -17,7 +17,7 @@ namespace Motocycle.Domain.Models
         public decimal FinishValue { get; set; } // Valor final
 
         public int RentDays { get; set; }
-        public Plan RentPlan { get; set; }
+        public Plan? RentPlan { get; set; }
         public RentPlans RentTypePlan { get; set; }
         public Motocy Motocy { get; set; }
         public Deliveryman Deliveryman { get; set; }

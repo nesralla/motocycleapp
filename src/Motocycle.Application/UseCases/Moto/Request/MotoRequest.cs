@@ -15,5 +15,4 @@ namespace Motocycle.Application.UseCases.Moto.Request
         public string MotocyModel { get; set; }
         public string LicensePlate { get; set; }
     }
-
 }

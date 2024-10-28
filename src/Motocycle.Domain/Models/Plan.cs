@@ -1,8 +1,9 @@
+using Motocycle.Domain.Core.Models;
 using Motocycle.Domain.Enums;
 
 namespace Motocycle.Domain.Models
 {
-    public class Plan
+    public class Plan : Entity
     {
         public RentPlans Type { get; set; }
         public int DurationDays { get; set; }

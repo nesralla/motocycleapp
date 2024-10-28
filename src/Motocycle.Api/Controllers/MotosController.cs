@@ -39,7 +39,7 @@ namespace Motocycle.Api.Controllers
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(MotoResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
 
-        public async Task<ActionResult<MotoResponse>> CreateMotoAsync([FromBody] MotoRequest request)
+        public async Task<ActionResult<MotoResponse>> CreateMotoAsync([FromBody] CreateMotoRequest request)
         {
             Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(CreateMotoAsync)}] - request: {request.ToJson()}");
 
@@ -69,6 +69,7 @@ namespace Motocycle.Api.Controllers
         /// <summary>
         /// Get Motos
         /// </summary>
+        /// <param name="Placa"></param>
         /// <returns></returns>
         [HttpGet("motos")]
         [SwaggerResponse(StatusCodes.Status200OK, null, typeof(MotoResponse))]
@@ -82,6 +83,20 @@ namespace Motocycle.Api.Controllers
 
             return ResponseGet(new List<MotoResponse> { result });
         }
+
+        // /// <summary>
+        // /// Delete Motos
+        // /// </summary>
+        // /// <param name="Id"></param>
+        // /// <returns></returns>
+        // [HttpDelete("motos/{id}")]
+        // [SwaggerResponse(StatusCodes.Status200OK, null, typeof(MotoResponse))]
+        // public async Task<ActionResult<MotoResponse>> DeleteAsync(Guid id)
+        // {
+        //     Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(DeleteAsync)}] - request: {id}");
+        //     await _mediator.Send(new MotoRequest(new Guid(User.GetBankAccountId()), id));
+        //     return ResponseDelete();
+        // }
 
 
 
