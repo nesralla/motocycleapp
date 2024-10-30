@@ -1,9 +1,10 @@
 using FluentValidation;
+using Motocycle.Domain.Models;
 using Motocycle.Domain.Validations.Base;
 
 namespace Motocycle.Domain.Validations.ApiErrorLog
 {
-    public class ApiErrorLogValidation : BaseValidation<Models.ApiErrorLog>
+    public class ApiErrorLogValidation : BaseValidation<ErrorLog>
     {
         protected void ValidateRootCause()
         {

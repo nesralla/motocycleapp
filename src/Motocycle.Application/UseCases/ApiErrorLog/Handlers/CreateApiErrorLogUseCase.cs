@@ -13,7 +13,7 @@ using Motocycle.Domain.Interfaces.Repositories;
 
 namespace Motocycle.Application.UseCases.ApiErrorLog.Handlers
 {
-    public class CreateApiErrorLogUseCase : UseCaseBaseRequestToDomain<ApiErrorLogRequest, Domain.Models.ApiErrorLog, ApiErrorLogResponse>
+    public class CreateApiErrorLogUseCase : UseCaseBaseRequestToDomain<ApiErrorLogRequest, Domain.Models.ErrorLog, ApiErrorLogResponse>
     {
         public CreateApiErrorLogUseCase(
             IHandler<DomainNotification> notifications,
@@ -27,7 +27,7 @@ namespace Motocycle.Application.UseCases.ApiErrorLog.Handlers
         public override async Task<ApiErrorLogResponse> HandleSafeMode(ApiErrorLogRequest request, CancellationToken cancellationToken)
         {
             ScapeError = true;
-            var entity = Mapper.Map<Domain.Models.ApiErrorLog>(request);
+            var entity = Mapper.Map<Domain.Models.ErrorLog>(request);
             await BaseDomainService.RegisterAsync(entity);
             await CommitAsync(true);
             return Mapper.Map<ApiErrorLogResponse>(entity);

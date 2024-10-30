@@ -378,6 +378,10 @@
               "target": "Package",
               "version": "[3.7.400.40, )"
             },
+            "AWSSDK.SimpleNotificationService": {
+              "target": "Package",
+              "version": "[3.7.400.40, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -485,9 +489,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

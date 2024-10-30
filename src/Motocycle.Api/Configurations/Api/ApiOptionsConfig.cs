@@ -11,7 +11,9 @@ namespace Motocycle.Api.Configurations.Api
         public static void LoadConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             var appConfig = configuration.Get<AppConfig>();
-            appConfig.DbSettings.ConnectionString = appConfig.DbSettings.ConnectionString.DbStringFormat(configuration["DATABASE_HOST"], configuration["DATABASE_USER"], configuration["DATABASE_PASSWORD"]);
+            appConfig.DbSettings.ConnectionString = appConfig.DbSettings.ConnectionString.DbStringFormat(configuration["DATABASE_HOST"],
+            configuration["DATABASE_USER"], configuration["DATABASE_PASSWORD"]);
+
             DomainNotificationHandler.ConfigureLog(appConfig.LogSettings);
 
 

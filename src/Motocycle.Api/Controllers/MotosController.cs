@@ -16,13 +16,13 @@ using Motocycle.Infra.CrossCutting.Commons.Extensions;
 
 namespace Motocycle.Api.Controllers
 {
-    public class MotosController : MainController
+    public class MotosController : ApiController
     {
         private readonly IMediator _mediator;
 
         public MotosController(
             IHandler<DomainNotification> notifications,
-            IMediator mediator) : base(notifications)
+            IMediator mediator) : base(notifications, mediator)
         {
 
             _mediator = mediator;
@@ -32,10 +32,11 @@ namespace Motocycle.Api.Controllers
         /// Create Moto
         /// </summary>
         /// <param name="Placa"></param>
+        /// <param name="request">The request object containing the parameters for the query</param>
         /// <param name="Modelo"></param>
         /// <param name="Ano"></param>
         /// <returns></returns>
-        [HttpPost("motos")]
+        [HttpPost]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(MotoResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
 
@@ -53,7 +54,7 @@ namespace Motocycle.Api.Controllers
         /// <param name="Id"></param>
         /// <param name="Placa"></param>
         /// <returns></returns>
-        [HttpPut("motos/{Id}/placa")]
+        [HttpPut("{Id}/placa")]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(MotoResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
         public async Task<ActionResult<MotoResponse>> UpdateLicensePlateByIdAsync([FromRoute] string id, [FromBody] MotoRequest request)
@@ -71,15 +72,15 @@ namespace Motocycle.Api.Controllers
         /// </summary>
         /// <param name="Placa"></param>
         /// <returns></returns>
-        [HttpGet("motos")]
+        [HttpGet]
         [SwaggerResponse(StatusCodes.Status200OK, null, typeof(MotoResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
-        public async Task<ActionResult<List<MotoResponse>>> GetMotosAsync([FromBody] MotoRequest request)
+        public async Task<ActionResult<List<MotoResponse>>> GetMotosAsync()
         {
 
-            Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(GetMotosAsync)}] - request: {request.ToJson()}");
+            Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(GetMotosAsync)}] - request: ");
 
-            var result = await _mediator.Send(request);
+            var result = await _mediator.Send(new MotoRequest());
 
             return ResponseGet(new List<MotoResponse> { result });
         }

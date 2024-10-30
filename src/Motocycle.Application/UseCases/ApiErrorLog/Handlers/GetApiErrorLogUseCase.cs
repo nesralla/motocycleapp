@@ -9,10 +9,11 @@ using Motocycle.Application.UseCases.ApiErrorLog.Request;
 using Motocycle.Application.UseCases.ApiErrorLog.Response;
 using Motocycle.Application.UseCases.Base;
 using Motocycle.Domain.Interfaces.Repositories;
+using Motocycle.Domain.Models;
 
 namespace Motocycle.Application.UseCases.ApiErrorLog.Handlers
 {
-    public class GetApiErrorLogUseCase : UseCaseBaseRequestToDomain<GetErrorsRequest, Domain.Models.ApiErrorLog, GetErrorsResponse>
+    public class GetApiErrorLogUseCase : UseCaseBaseRequestToDomain<GetErrorsRequest, ErrorLog, GetErrorsResponse>
     {
         public GetApiErrorLogUseCase(
             IHandler<DomainNotification> notifications,

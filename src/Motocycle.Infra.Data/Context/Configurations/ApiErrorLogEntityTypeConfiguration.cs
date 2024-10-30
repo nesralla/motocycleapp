@@ -5,9 +5,9 @@ using Motocycle.Infra.Data.Base;
 
 namespace Motocycle.Infra.Data.Context.Configurations
 {
-    public class ApiErrorLogEntityTypeConfiguration : EntityTypeConfiguration<ApiErrorLog>
+    public class ApiErrorLogEntityTypeConfiguration : EntityTypeConfiguration<ErrorLog>
     {
-        public override void Configure(EntityTypeBuilder<ApiErrorLog> builder)
+        public override void Configure(EntityTypeBuilder<ErrorLog> builder)
         {
             base.Configure(builder);
 

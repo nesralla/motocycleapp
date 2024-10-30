@@ -1,6 +1,34 @@
 @Motocycle.Api_HostAddress = http://localhost:5261
 
-GET {{Motocycle.Api_HostAddress}}/weatherforecast/
+GET http://localhost:5000/api/motos
 Accept: application/json
 
 ###
+
+POST http://localhost:5000/api/motos
+Content-Type: application/json
+
+{
+  "modelo": "Yamaha MT-07",
+  "ano": 2023,
+  "cor": "Preto"
+}
+
+###
+
+PUT http://localhost:5000/api/motos/1
+Content-Type: application/json
+
+{
+  "modelo": "Yamaha MT-09",
+  "ano": 2024,
+  "cor": "Azul"
+}
+
+###
+
+DELETE http://localhost:5000/api/motos/1
+
+###
+
+

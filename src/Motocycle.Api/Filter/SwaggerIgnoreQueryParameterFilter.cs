@@ -6,7 +6,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Motocycla.Api.Filter
+namespace Motocycle.Api.Filter
 {
     public class SwaggerIgnoreQueryParameterFilter : IOperationFilter
     {

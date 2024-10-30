@@ -7,7 +7,6 @@ using Swashbuckle.AspNetCore.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
-using Motocycla.Api.Filter;
 using Motocycle.Api.Filter;
 
 namespace Motocycle.Api.Configurations.Swagger

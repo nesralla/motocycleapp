@@ -10,7 +10,7 @@ namespace Motocycle.Application.AutoMapper
         public RequestToDomainMappingProfile()
         {
 
-            CreateMap<ApiErrorLogRequest, ApiErrorLog>()
+            CreateMap<ApiErrorLogRequest, ErrorLog>()
                 .ForMember(dest => dest.RootCause, opt => opt.MapFrom(src => src.RootCause))
                 .ForMember(dest => dest.Message, opt => opt.MapFrom(src => src.Message))
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type));

@@ -17,9 +17,9 @@
       "applicationUrl": "http://localhost:5261",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "AWS_ACCESS_KEY_ID": "",
+        "AWS_ACCESS_KEY_ID": "test",
         "AWS_DEFAULT_REGION": "us-east-1",
-        "AWS_SECRET_ACCESS_KEY": "",
+        "AWS_SECRET_ACCESS_KEY": "test",
         "DATABASE_HOST": "localhost:5432",
         "DATABASE_PASSWORD": "2846Cycle",
         "DATABASE_USER": "admin"
@@ -47,9 +47,9 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "AWS_ACCESS_KEY_ID": "",
+        "AWS_ACCESS_KEY_ID": "test",
         "AWS_DEFAULT_REGION": "us-east-1",
-        "AWS_SECRET_ACCESS_KEY": "",
+        "AWS_SECRET_ACCESS_KEY": "test",
         "DATABASE_HOST": "localhost:5432",
         "DATABASE_PASSWORD": "2846Cycle",
         "DATABASE_USER": "admin"
@@ -63,9 +63,9 @@
       "applicationUrl": "http://localhost:5002",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "AWS_ACCESS_KEY_ID": "",
+        "AWS_ACCESS_KEY_ID": "test",
         "AWS_DEFAULT_REGION": "us-east-1",
-        "AWS_SECRET_ACCESS_KEY": "",
+        "AWS_SECRET_ACCESS_KEY": "test",
         "DATABASE_HOST": "localhost:5432",
         "DATABASE_PASSWORD": "2846Cycle",
         "DATABASE_USER": "admin"
@@ -79,9 +79,9 @@
       "applicationUrl": "http://localhost:5002",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "AWS_ACCESS_KEY_ID": "",
+        "AWS_ACCESS_KEY_ID": "test",
         "AWS_DEFAULT_REGION": "us-east-1",
-        "AWS_SECRET_ACCESS_KEY": "",
+        "AWS_SECRET_ACCESS_KEY": "test",
         "DATABASE_HOST": "localhost:5432",
         "DATABASE_PASSWORD": "2846Cycle",
         "DATABASE_USER": "admin"

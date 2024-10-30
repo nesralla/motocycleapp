@@ -25,6 +25,9 @@ using Motocycle.Application.UseCases.Moto.Request;
 using Motocycle.Application.UseCases.Moto.Response;
 using Motocycle.Application.UseCases.Moto.Handlers;
 using Motocycle.Application.Events.MotocyEvent;
+using Motocycle.Domain.Validations.ApiErrorLog;
+using Motocycle.Infra.CrossCutting.MessageBroker.SnsTopic.Interfaces;
+using Motocycle.Infra.CrossCutting.MessageBroker.SnsTopic;
 
 namespace Motocycle.Infra.CrossCutting.IoC
 {
@@ -54,6 +57,7 @@ namespace Motocycle.Infra.CrossCutting.IoC
             services.AddScoped<IApiErrorLogService, ApiErrorLogService>();
             services.AddScoped<IMotocyService, MotocyService>();
             services.AddScoped<IRegisterValidation<Motocy>, RegisterMotoValidation>();
+            services.AddScoped<IRegisterValidation<ErrorLog>, RegisterApiErrorLogValidation>();
 
             services.AddScoped<IHttpFactoryService, HttpFactoryService>();
             services.AddHttpClient(typeof(HttpFactoryService).Name)
@@ -66,6 +70,8 @@ namespace Motocycle.Infra.CrossCutting.IoC
         public static IServiceCollection RegisterApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<INotificationHandler<MotocyEvent>, MotocyEventHandler>();
+            services.AddScoped<IPublishTopic, PublishTopic>();
+
             services.AddScoped<IRequestHandler<GetErrorsRequest, GetErrorsResponse>, GetApiErrorLogUseCase>();
             services.AddScoped<IRequestHandler<ApiErrorLogRequest, ApiErrorLogResponse>, CreateApiErrorLogUseCase>();
             services.AddScoped<IRequestHandler<MotoRequest, MotoResponse>, CreateMotocycleUseCase>();

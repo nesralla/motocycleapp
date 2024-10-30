@@ -1,4 +1,5 @@
 ﻿
+using Amazon.SimpleNotificationService;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Motocycle.Infra.CrossCutting.MessageBroker.SnsTopic;
@@ -14,7 +15,7 @@ public static class MessageBrokerConfiguration
         if (services is null) throw new ArgumentNullException(nameof(services));
         if (configuration is null) throw new ArgumentNullException(nameof(configuration));
 
-
+        services.AddAWSService<IAmazonSimpleNotificationService>();
         services.AddTransient<IPublishTopic, PublishTopic>();
     }
 }

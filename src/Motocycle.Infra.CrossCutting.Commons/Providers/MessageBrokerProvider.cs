@@ -5,6 +5,7 @@
         public string Profile { get; set; }
         public string Region { get; set; }
         public string Host { get; set; }
+        public string TopicHost { get; set; }
         public int TimeToDelay { get; set; }
     }
 }

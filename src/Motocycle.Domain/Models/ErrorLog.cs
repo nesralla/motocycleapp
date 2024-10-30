@@ -3,7 +3,7 @@ using Motocycle.Domain.Core.Models;
 
 namespace Motocycle.Domain.Models
 {
-    public class ApiErrorLog : Entity
+    public class ErrorLog : Entity
     {
         public string RootCause { get; set; }
         public string Message { get; set; }

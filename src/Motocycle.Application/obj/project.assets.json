@@ -66,10 +66,10 @@
           }
         }
       },
-      "AWSSDK.SimpleNotificationService/3.7.301.34": {
+      "AWSSDK.SimpleNotificationService/3.7.400.40": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.303.26, 4.0.0)"
+          "AWSSDK.Core": "[3.7.400.40, 4.0.0)"
         },
         "compile": {
           "lib/net8.0/AWSSDK.SimpleNotificationService.dll": {
@@ -1654,6 +1654,7 @@
           "AWSSDK.Extensions.NETCore.Setup": "3.7.301",
           "AWSSDK.S3": "3.7.405.4",
           "AWSSDK.SQS": "3.7.400.40",
+          "AWSSDK.SimpleNotificationService": "3.7.400.40",
           "AutoMapper": "13.0.1",
           "FluentValidation": "11.10.0",
           "FluentValidation.AspNetCore": "11.3.0",
@@ -1682,10 +1683,7 @@
         },
         "runtime": {
           "bin/placeholder/Motocycle.Infra.CrossCutting.Commons.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -1784,17 +1782,17 @@
         "tools/uninstall.ps1"
       ]
     },
-    "AWSSDK.SimpleNotificationService/3.7.301.34": {
-      "sha512": "YqWzMBU4+oLEHCQcoGzExAFfu4g/qOYZ5IDcUORS6pbBs0jK4GI2IazLZsFsBjlZhF6FngMHpT8xQiEdATgG7A==",
+    "AWSSDK.SimpleNotificationService/3.7.400.40": {
+      "sha512": "5/6eAlEXOL5nhc3RPwgE3zRe/8fSFevsoS538sMwWt49zmwbWoEm2eiVVFbiHtejbLvXBYnjuM0uSFQ/eVKUaQ==",
       "type": "package",
-      "path": "awssdk.simplenotificationservice/3.7.301.34",
+      "path": "awssdk.simplenotificationservice/3.7.400.40",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.SimpleNotificationService.CodeAnalysis.dll",
         "analyzers/dotnet/cs/SharedAnalysisCode.dll",
-        "awssdk.simplenotificationservice.3.7.301.34.nupkg.sha512",
+        "awssdk.simplenotificationservice.3.7.400.40.nupkg.sha512",
         "awssdk.simplenotificationservice.nuspec",
         "images/AWSLogo.png",
         "lib/net35/AWSSDK.SimpleNotificationService.dll",

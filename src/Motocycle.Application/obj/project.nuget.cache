@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LjQ/Yk1RbEY=",
+  "dgSpecHash": "h2zsp6Qlm6M=",
   "success": true,
   "projectFilePath": "/Users/igornesrallaribeiro/Documents/Projetos/Apps/motocycleapp/src/Motocycle.Application/Motocycle.Application.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,7 @@
     "/Users/igornesrallaribeiro/.nuget/packages/awssdk.core/3.7.400.40/awssdk.core.3.7.400.40.nupkg.sha512",
     "/Users/igornesrallaribeiro/.nuget/packages/awssdk.extensions.netcore.setup/3.7.301/awssdk.extensions.netcore.setup.3.7.301.nupkg.sha512",
     "/Users/igornesrallaribeiro/.nuget/packages/awssdk.s3/3.7.405.4/awssdk.s3.3.7.405.4.nupkg.sha512",
-    "/Users/igornesrallaribeiro/.nuget/packages/awssdk.simplenotificationservice/3.7.301.34/awssdk.simplenotificationservice.3.7.301.34.nupkg.sha512",
+    "/Users/igornesrallaribeiro/.nuget/packages/awssdk.simplenotificationservice/3.7.400.40/awssdk.simplenotificationservice.3.7.400.40.nupkg.sha512",
     "/Users/igornesrallaribeiro/.nuget/packages/awssdk.sqs/3.7.400.40/awssdk.sqs.3.7.400.40.nupkg.sha512",
     "/Users/igornesrallaribeiro/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/igornesrallaribeiro/.nuget/packages/fluentvalidation/11.10.0/fluentvalidation.11.10.0.nupkg.sha512",

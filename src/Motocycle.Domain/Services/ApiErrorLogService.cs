@@ -8,11 +8,11 @@ using Motocycle.Domain.Services.Base;
 
 namespace Motocycle.Domain.Services
 {
-    public class ApiErrorLogService : BaseServiceValidation<ApiErrorLog>, IApiErrorLogService
+    public class ApiErrorLogService : BaseServiceValidation<ErrorLog>, IApiErrorLogService
     {
-        public ApiErrorLogService(IBaseRepository<ApiErrorLog> baseRepository,
+        public ApiErrorLogService(IBaseRepository<ErrorLog> baseRepository,
             IHandler<DomainNotification> notifications,
-            IRegisterValidation<ApiErrorLog> registerValidation)
+            IRegisterValidation<ErrorLog> registerValidation)
             : base(baseRepository, notifications, registerValidation)
         {
         }

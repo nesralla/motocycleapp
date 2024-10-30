@@ -11,10 +11,6 @@ using Motocycle.Infra.CrossCutting.Commons.Extensions;
 
 namespace Motocycle.Api.Controllers.Base
 {
-    [ApiController]
-    [Produces("application/json")]
-    [Consumes("application/json")]
-    [Route("/api/v{v:apiVersion}/[controller]")]
     public class MainController : ControllerBase
     {
         protected IHandler<DomainNotification> Notifications { get; }

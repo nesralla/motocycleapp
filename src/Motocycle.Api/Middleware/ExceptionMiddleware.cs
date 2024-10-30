@@ -13,11 +13,14 @@ namespace Motocycle.Api.Middleware
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
+        private readonly IMediator _mediator;
 
-        public ExceptionMiddleware(RequestDelegate next)
+        public ExceptionMiddleware(RequestDelegate next, IMediator mediator)
         {
             _next = next;
+            _mediator = mediator;
         }
+
 
         public async Task InvokeAsync(HttpContext httpContext,
                                         ILogger<ExceptionMiddleware> logger,
