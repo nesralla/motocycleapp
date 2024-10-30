@@ -22,6 +22,8 @@ using Motocycle.Domain.Validations.ApiErrorLog;
 using Amazon.Extensions.NETCore.Setup;
 using Amazon;
 using Amazon.SimpleNotificationService;
+using Amazon.Runtime;
+using Amazon.SQS;
 
 namespace Motocycle.Api.Configurations.Api
 {
@@ -69,6 +71,11 @@ namespace Motocycle.Api.Configurations.Api
                 Region = RegionEndpoint.USEast1,
                 DefaultClientConfig = { ServiceURL = "http://localhost:4566" } // URL do LocalStack
             };
+            var credentials = new StoredProfileAWSCredentials("localstack");
+            var sqsClient = new AmazonSQSClient(credentials, new AmazonSQSConfig
+            {
+                ServiceURL = "http://localhost:4566"
+            });
 
             services.AddDefaultAWSOptions(awsOptions);
             services.AddAWSService<IAmazonSimpleNotificationService>();
