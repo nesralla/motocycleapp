@@ -26,7 +26,7 @@ namespace Motocycle.Application.Events.MotocyEvent
 
         public override async Task Handle(MotocyEvent notification, CancellationToken cancellationToken)
         {
-            Notifications.LogInfo($"[{nameof(MotocyEventHandler)}] -[{nameof(MotocyEvent)}] - Publish CardUserEvent with payload: {notification.ToJson()}");
+            Notifications.LogInfo($"[{nameof(MotocyEventHandler)}] -[{nameof(MotocyEvent)}] - Publish motocycle with payload: {notification.ToJson()}");
             await _snsTopic.Publish(_topic.MotocycleEvent, notification);
         }
     }
