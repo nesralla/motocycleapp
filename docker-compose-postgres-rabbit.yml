@@ -16,7 +16,7 @@ services:
     container_name: motocycle_localstack
     ports:
       - "4566:4566" # Porta padrão para a API do LocalStack
-      - "4510-4559:4510-4559" # Portas para serviços específicos (opcional)
+      - "4571:4571" # Portas para serviços específicos (opcional)
     environment:
       - SERVICES=sqs,sns # Serviços que você quer habilitar
       - DEBUG=1

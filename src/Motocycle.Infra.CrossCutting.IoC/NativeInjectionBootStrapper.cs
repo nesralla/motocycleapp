@@ -20,7 +20,7 @@ using Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services;
 using Motocycle.Infra.Data.Repositories;
 using Motocycle.Domain.Models;
 using Motocycle.Domain.Interfaces.Validation;
-using Motocycle.Domain.Validations.Motocy;
+using Motocycle.Domain.Validations.Moto;
 using Motocycle.Application.UseCases.Moto.Request;
 using Motocycle.Application.UseCases.Moto.Response;
 using Motocycle.Application.UseCases.Moto.Handlers;

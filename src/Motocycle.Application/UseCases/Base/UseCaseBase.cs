@@ -44,9 +44,9 @@ namespace Motocycle.Application.UseCases.Base
             return await _unitOfWork.CommitAsync();
         }
 
-        public abstract Task<TResponse> HandleSafeMode(TRequest request, CancellationToken cancellationToken);
+        public abstract Task<TResponse> HandleSafeMode(TRequest request, CancellationToken cancellationToken = default);
 
-        public virtual async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken)
+        public virtual async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken = default)
         {
             var result = await HandleSafeMode(request, cancellationToken);
 

@@ -68,7 +68,7 @@ namespace Motocycle.Application.Services
                     Year = entity.Year
 
                 }
-            }, cancellationToken);
+            });
 
         }
     }

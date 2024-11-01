@@ -7,7 +7,6 @@ namespace Motocycle.Application.Commons.Queries
     {
         public string Search { get; set; }
         public string LicensePlate { get; set; }
-        public string MotocyModel { get; set; }
         public int Year { get; set; }
         public string OrderBy { get; set; } = "CreateAt";
 

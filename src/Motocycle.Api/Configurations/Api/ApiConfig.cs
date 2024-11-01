@@ -24,6 +24,7 @@ using Amazon;
 using Amazon.SimpleNotificationService;
 using Amazon.Runtime;
 using Amazon.SQS;
+using Motocycle.Infra.CrossCutting.MessageBroker.Configuration;
 
 namespace Motocycle.Api.Configurations.Api
 {
@@ -65,20 +66,7 @@ namespace Motocycle.Api.Configurations.Api
                  .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ApiErrorLogValidation>());
 
 
-            var awsOptions = new AWSOptions
-            {
-                Credentials = new Amazon.Runtime.BasicAWSCredentials("test", "test"), // Usado para LocalStack
-                Region = RegionEndpoint.USEast1,
-                DefaultClientConfig = { ServiceURL = "http://localhost:4566" } // URL do LocalStack
-            };
-            var credentials = new StoredProfileAWSCredentials("localstack");
-            var sqsClient = new AmazonSQSClient(credentials, new AmazonSQSConfig
-            {
-                ServiceURL = "http://localhost:4566"
-            });
 
-            services.AddDefaultAWSOptions(awsOptions);
-            services.AddAWSService<IAmazonSimpleNotificationService>();
             services.AddWebApiVersioning();
 
             services.AddSwaggerDocumentation(configuration);
@@ -94,8 +82,7 @@ namespace Motocycle.Api.Configurations.Api
                             .AllowAnyHeader());
             });
 
-            //services.AddStorageConfiguration(configuration);
-
+            //services.AddAwsSnsConfiguration(configuration);
             services.AddServiceBusConfiguration(configuration);
 
             services.AddHostedService<Application.MessageBroker.Worker>();

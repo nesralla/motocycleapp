@@ -6,7 +6,7 @@ namespace Motocycle.Application.Events.MotocyEvent
     public class MotocyEvent : EventRequest
     {
         public CreateMotocyEvent CreateInfo { get; set; }
-        public UpdateCardUserStatusEvent UpdateInfo { get; set; }
+        public UpdateMotocyPlateEvent UpdateInfo { get; set; }
     }
 
     public class CreateMotocyEvent
@@ -16,7 +16,7 @@ namespace Motocycle.Application.Events.MotocyEvent
         public int Year { get; set; }
     }
 
-    public class UpdateCardUserStatusEvent
+    public class UpdateMotocyPlateEvent
     {
         public string LicensePlate { get; set; }
 

@@ -1,10 +1,11 @@
 ﻿
 using FluentValidation;
+using Motocycle.Domain.Models;
 using Motocycle.Domain.Validations.Base;
 
-namespace Motocycle.Domain.Validations.Motocy
+namespace Motocycle.Domain.Validations.Moto
 {
-    public class MotocyValidation : BaseValidation<Models.Motocy>
+    public class MotocyValidation : BaseValidation<Motocy>
     {
         protected void ValidateMotocy()
         {

@@ -46,7 +46,7 @@ namespace Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services
             if (!basicAuth.Equals(default))
             {
                 var byteArray = Encoding.ASCII.GetBytes($"{basicAuth.UserName}:{basicAuth.Password}");
-                _clientFactory.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                // _clientFactory.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
             }
             return _clientFactory;
         }
@@ -70,10 +70,7 @@ namespace Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services
 
             _clientFactory.BaseAddress = new Uri(url);
 
-            if (!string.IsNullOrWhiteSpace(basicAuthBase64))
-            {
-                _clientFactory.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", basicAuthBase64);
-            }
+
 
             return _clientFactory;
         }
@@ -161,7 +158,7 @@ namespace Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services
 
         public async Task<HttpResponseMessage> ExecuteRequestAsync(HttpClient client, HttpRequestMessage request)
         {
-            Stopwatch stopwatch = Stopwatch.StartNew();
+
             _logger.LogInformation(JsonConvert.SerializeObject(new
             {
                 Message = "Iniciando Request",
@@ -175,7 +172,7 @@ namespace Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services
                 HttpMethod m when m == HttpMethod.Delete => await client.DeleteAsync(request.RequestUri),
                 _ => await client.GetAsync(request.RequestUri),
             };
-            stopwatch.Stop();
+
             if (response.IsSuccessStatusCode)
             {
                 _logger.LogInformation(JsonConvert.SerializeObject(new
@@ -184,7 +181,7 @@ namespace Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services
                     response.StatusCode,
                     request.Method,
                     request.RequestUri,
-                    stopwatch.ElapsedMilliseconds
+
                 }));
             }
             else
@@ -195,7 +192,7 @@ namespace Motocycle.Infra.CrossCutting.Commons.HttpFactory.Services
                     response.Headers,
                     request.RequestUri,
                     Body = response.Content.ReadAsStringAsync(),
-                    stopwatch.ElapsedMilliseconds
+
                 }));
             }
 

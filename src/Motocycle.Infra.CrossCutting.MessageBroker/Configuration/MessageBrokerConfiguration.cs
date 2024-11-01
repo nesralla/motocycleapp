@@ -1,5 +1,9 @@
 ﻿
+using Amazon;
+using Amazon.Extensions.NETCore.Setup;
+using Amazon.Runtime;
 using Amazon.SimpleNotificationService;
+using Amazon.SQS;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Motocycle.Infra.CrossCutting.MessageBroker.SnsTopic;
