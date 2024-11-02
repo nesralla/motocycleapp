@@ -16,6 +16,7 @@ using Motocycle.Infra.CrossCutting.Commons.Extensions;
 
 namespace Motocycle.Api.Controllers
 {
+    [AllowAnonymous]
     public class MotosController : ApiController
     {
         private readonly IMediator _mediator;

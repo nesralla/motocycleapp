@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Motocycle.Application.MessageBroker.Base;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
-using SQS.ServiceBus.Providers;
+using MessageBrokerProvider = Motocycle.Infra.CrossCutting.Commons.Providers.MessageBrokerProvider;
 
 namespace Motocycle.Application.MessageBroker
 {

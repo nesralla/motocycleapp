@@ -1,9 +1,4 @@
-using System;
 using MediatR;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Motocycle.Domain.Core.Interfaces;
 using Motocycle.Domain.Core.Notifications;
@@ -60,7 +55,7 @@ namespace Motocycle.Application.Services
 
             await _mediator.Publish(new MotocyEvent
             {
-                CreateInfo = new CreateMotocyEvent
+                MotocycleInfo = new CreateMotocycleSqsRequest
                 {
 
                     LicensePlate = entity.LicensePlate,

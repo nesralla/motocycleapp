@@ -4,6 +4,7 @@ using Motocycle.Domain.Core.Notifications;
 using Motocycle.Infra.CrossCutting.Commons.Extensions;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
 using SQS.ServiceBus.Providers;
+using MessageBrokerProvider = Motocycle.Infra.CrossCutting.Commons.Providers.MessageBrokerProvider;
 
 namespace Motocycle.Api.Configurations.Api
 {
@@ -22,6 +23,7 @@ namespace Motocycle.Api.Configurations.Api
             services.AddSingleton(typeof(DbSettingsProvider), appConfig.DbSettings);
             services.AddSingleton(typeof(MessageBrokerProvider), appConfig.MessageBrokerSettings);
             services.AddSingleton(typeof(InternalIntegrationSettingsProvider), appConfig.InternalIntegrationSettings);
+
         }
     }
 

@@ -11,23 +11,23 @@ namespace Motocycle.Application.Events.MotocyEvent
     public class MotocyEventHandler : EventHandlerBase<MotocyEvent>
     {
 
-        private readonly IPublishTopic _snsTopic;
-        private readonly QueuesProvider.TopicProducer _topic;
+        private readonly IPublishEndpoint _bus;
+        private readonly QueuesProvider.QueuesProducer _queue;
 
         public MotocyEventHandler(
-            IPublishTopic snsTopic,
-            QueuesProvider topic,
+            IPublishEndpoint bus,
+            QueuesProvider queue,
             IUnitOfWork unitOfWork,
             IHandler<DomainNotification> notifications) : base(notifications, unitOfWork)
         {
-            _snsTopic = snsTopic;
-            _topic = topic.TopicProducers;
+            _bus = bus;
+            _queue = queue.Producers;
         }
 
         public override async Task Handle(MotocyEvent notification, CancellationToken cancellationToken)
         {
             Notifications.LogInfo($"[{nameof(MotocyEventHandler)}] -[{nameof(MotocyEvent)}] - Publish motocycle with payload: {notification.ToJson()}");
-            await _snsTopic.Publish(_topic.MotocycleEvent, notification);
+            await _bus.Publish(_queue.CreateMotocycleSender, notification);
         }
     }
 }

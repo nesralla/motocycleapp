@@ -93,7 +93,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.9.0, )"
             },
             "Swashbuckle.AspNetCore.Annotations": {
               "target": "Package",
@@ -151,6 +151,9 @@
             "projectReferences": {
               "/Users/igornesrallaribeiro/Documents/Projetos/Apps/motocycleapp/src/Motocycle.Domain/Motocycle.Domain.csproj": {
                 "projectPath": "/Users/igornesrallaribeiro/Documents/Projetos/Apps/motocycleapp/src/Motocycle.Domain/Motocycle.Domain.csproj"
+              },
+              "/Users/igornesrallaribeiro/Documents/Projetos/Apps/motocycleapp/src/Motocycle.Infra.CrossCutting.MessageBroker/Motocycle.Infra.CrossCutting.MessageBroker.csproj": {
+                "projectPath": "/Users/igornesrallaribeiro/Documents/Projetos/Apps/motocycleapp/src/Motocycle.Infra.CrossCutting.MessageBroker/Motocycle.Infra.CrossCutting.MessageBroker.csproj"
               }
             }
           }
@@ -364,23 +367,23 @@
           "dependencies": {
             "AWSSDK.Core": {
               "target": "Package",
-              "version": "[3.7.400.40, )"
+              "version": "[4.0.0-preview.4, )"
             },
             "AWSSDK.Extensions.NETCore.Setup": {
               "target": "Package",
-              "version": "[3.7.301, )"
+              "version": "[4.0.0-preview.4, )"
             },
             "AWSSDK.S3": {
               "target": "Package",
-              "version": "[3.7.405.4, )"
+              "version": "[4.0.0-preview.4, )"
             },
             "AWSSDK.SQS": {
               "target": "Package",
-              "version": "[3.7.400.40, )"
+              "version": "[4.0.0-preview.4, )"
             },
             "AWSSDK.SimpleNotificationService": {
               "target": "Package",
-              "version": "[3.7.400.40, )"
+              "version": "[4.0.0-preview.4, )"
             },
             "AutoMapper": {
               "target": "Package",
@@ -470,7 +473,7 @@
             },
             "Serilog.Sinks.Async": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[2.1.0, )"
             },
             "Serilog.Sinks.Console": {
               "target": "Package",
@@ -616,11 +619,31 @@
           "dependencies": {
             "AWSSDK.Core": {
               "target": "Package",
-              "version": "[3.7.400.40, )"
+              "version": "[4.0.0-preview.4, )"
+            },
+            "AWSSDK.Extensions.NETCore.Setup": {
+              "target": "Package",
+              "version": "[4.0.0-preview.4, )"
+            },
+            "AWSSDK.SQS": {
+              "target": "Package",
+              "version": "[4.0.0-preview.4, )"
             },
             "AWSSDK.SimpleNotificationService": {
               "target": "Package",
-              "version": "[3.7.400.40, )"
+              "version": "[4.0.0-preview.4, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[6.0.0-preview.4.21253.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24473.5, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24473.5, )"
             }
           },
           "imports": [

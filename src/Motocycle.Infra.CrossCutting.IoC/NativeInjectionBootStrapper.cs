@@ -70,7 +70,7 @@ namespace Motocycle.Infra.CrossCutting.IoC
         public static IServiceCollection RegisterApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<INotificationHandler<MotocyEvent>, MotocyEventHandler>();
-            services.AddScoped<IPublishTopic, PublishTopic>();
+            //services.AddScoped<IPublishTopic, PublishTopic>();
 
             services.AddScoped<IRequestHandler<GetErrorsRequest, GetErrorsResponse>, GetApiErrorLogUseCase>();
             services.AddScoped<IRequestHandler<ApiErrorLogRequest, ApiErrorLogResponse>, CreateApiErrorLogUseCase>();

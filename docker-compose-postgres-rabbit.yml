@@ -18,7 +18,11 @@ services:
       - "4566:4566" # Porta padrão para a API do LocalStack
       - "4571:4571" # Portas para serviços específicos (opcional)
     environment:
-      - SERVICES=sqs,sns # Serviços que você quer habilitar
+      - SERVICES=sqs,sns,s3 # Serviços que você quer habilitara
+      - EDGE_PORT=4566
+      - AWS_DEFAULT_REGION=us-east-1
+      - CORS_ALLOW_ALL_ORIGINS=1 # Permitir todas as origens
+      - USE_SINGLE_REGION=1
       - DEBUG=1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock # Necessário para permitir que LocalStack crie contêineres

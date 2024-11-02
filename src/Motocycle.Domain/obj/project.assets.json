@@ -18,7 +18,7 @@
           }
         }
       },
-      "AWSSDK.Core/3.7.400.40": {
+      "AWSSDK.Core/4.0.0-preview.4": {
         "type": "package",
         "compile": {
           "lib/net8.0/AWSSDK.Core.dll": {
@@ -31,29 +31,32 @@
           }
         }
       },
-      "AWSSDK.Extensions.NETCore.Setup/3.7.301": {
+      "AWSSDK.Extensions.NETCore.Setup/4.0.0-preview.4": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "3.7.300",
+          "AWSSDK.Core": "4.0.0-preview.4",
           "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "2.0.0"
         },
         "compile": {
           "lib/net8.0/AWSSDK.Extensions.NETCore.Setup.dll": {
-            "related": ".pdb"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/net8.0/AWSSDK.Extensions.NETCore.Setup.dll": {
-            "related": ".pdb"
+            "related": ".pdb;.xml"
           }
+        },
+        "build": {
+          "buildTransitive/net8.0/AWSSDK.Extensions.NETCore.Setup.targets": {}
         }
       },
-      "AWSSDK.S3/3.7.405.4": {
+      "AWSSDK.S3/4.0.0-preview.4": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.400.40, 4.0.0)"
+          "AWSSDK.Core": "[4.0.0-preview.4, 5.0.0-preview.4)"
         },
         "compile": {
           "lib/net8.0/AWSSDK.S3.dll": {
@@ -66,10 +69,10 @@
           }
         }
       },
-      "AWSSDK.SimpleNotificationService/3.7.400.40": {
+      "AWSSDK.SimpleNotificationService/4.0.0-preview.4": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.400.40, 4.0.0)"
+          "AWSSDK.Core": "[4.0.0-preview.4, 5.0.0-preview.4)"
         },
         "compile": {
           "lib/net8.0/AWSSDK.SimpleNotificationService.dll": {
@@ -82,10 +85,10 @@
           }
         }
       },
-      "AWSSDK.SQS/3.7.400.40": {
+      "AWSSDK.SQS/4.0.0-preview.4": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.400.40, 4.0.0)"
+          "AWSSDK.Core": "[4.0.0-preview.4, 5.0.0-preview.4)"
         },
         "compile": {
           "lib/net8.0/AWSSDK.SQS.dll": {
@@ -1416,10 +1419,10 @@
           }
         }
       },
-      "Serilog.Sinks.Async/2.0.0": {
+      "Serilog.Sinks.Async/2.1.0": {
         "type": "package",
         "dependencies": {
-          "Serilog": "4.0.0"
+          "Serilog": "4.1.0"
         },
         "compile": {
           "lib/net8.0/Serilog.Sinks.Async.dll": {
@@ -1637,11 +1640,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "AWSSDK.Core": "3.7.400.40",
-          "AWSSDK.Extensions.NETCore.Setup": "3.7.301",
-          "AWSSDK.S3": "3.7.405.4",
-          "AWSSDK.SQS": "3.7.400.40",
-          "AWSSDK.SimpleNotificationService": "3.7.400.40",
+          "AWSSDK.Core": "4.0.0-preview.4",
+          "AWSSDK.Extensions.NETCore.Setup": "4.0.0-preview.4",
+          "AWSSDK.S3": "4.0.0-preview.4",
+          "AWSSDK.SQS": "4.0.0-preview.4",
+          "AWSSDK.SimpleNotificationService": "4.0.0-preview.4",
           "AutoMapper": "13.0.1",
           "FluentValidation": "11.10.0",
           "FluentValidation.AspNetCore": "11.3.0",
@@ -1662,7 +1665,7 @@
           "Serilog.Enrichers.CorrelationId": "3.0.1",
           "Serilog.Exceptions": "8.4.0",
           "Serilog.Sinks.AmazonS3": "1.5.2",
-          "Serilog.Sinks.Async": "2.0.0",
+          "Serilog.Sinks.Async": "2.1.0",
           "Serilog.Sinks.Console": "6.0.0"
         },
         "compile": {
@@ -1690,23 +1693,20 @@
         "lib/net6.0/AutoMapper.xml"
       ]
     },
-    "AWSSDK.Core/3.7.400.40": {
-      "sha512": "Bt3id437I3k363mHCvBdpUwdw9P2zM3te+wCZ2EWv+PIOyz1NbYqTfrn04U3x333wxsOfT9Ln+cUJeUw96HsTw==",
+    "AWSSDK.Core/4.0.0-preview.4": {
+      "sha512": "VeekkHkQVHoQ/5n0Bmbzh0dlfqksMLMYftijZs6zIZ3uv1JWGDTxWHNw3H7FSf1933x1DQRTLSnPbvpTwVLbxw==",
       "type": "package",
-      "path": "awssdk.core/3.7.400.40",
+      "path": "awssdk.core/4.0.0-preview.4",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.3.7.400.40.nupkg.sha512",
+        "awssdk.core.4.0.0-preview.4.nupkg.sha512",
         "awssdk.core.nuspec",
         "images/AWSLogo.png",
-        "lib/net35/AWSSDK.Core.dll",
-        "lib/net35/AWSSDK.Core.pdb",
-        "lib/net35/AWSSDK.Core.xml",
-        "lib/net45/AWSSDK.Core.dll",
-        "lib/net45/AWSSDK.Core.pdb",
-        "lib/net45/AWSSDK.Core.xml",
+        "lib/net472/AWSSDK.Core.dll",
+        "lib/net472/AWSSDK.Core.pdb",
+        "lib/net472/AWSSDK.Core.xml",
         "lib/net8.0/AWSSDK.Core.dll",
         "lib/net8.0/AWSSDK.Core.pdb",
         "lib/net8.0/AWSSDK.Core.xml",
@@ -1719,43 +1719,47 @@
         "tools/account-management.ps1"
       ]
     },
-    "AWSSDK.Extensions.NETCore.Setup/3.7.301": {
-      "sha512": "hXejqa+G72kVCSmpKlNVWDEqa8KVWOFL/asgoE2mairQOnmTCv6vMxaXjJ0nQaad5/21zTdKDIfDiki5YTne1Q==",
+    "AWSSDK.Extensions.NETCore.Setup/4.0.0-preview.4": {
+      "sha512": "QWv5xIi2cnloYTK7KikBl93i+bVZ3g0N6Bew9qHqj+tex1EtkYun5ay8xi8nV0D6pA3S3M3b0+45sU8RPDNE2Q==",
       "type": "package",
-      "path": "awssdk.extensions.netcore.setup/3.7.301",
+      "path": "awssdk.extensions.netcore.setup/4.0.0-preview.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.extensions.netcore.setup.3.7.301.nupkg.sha512",
+        "ConfigurationSchema.json",
+        "awssdk.extensions.netcore.setup.4.0.0-preview.4.nupkg.sha512",
         "awssdk.extensions.netcore.setup.nuspec",
+        "buildTransitive/net8.0/AWSSDK.Extensions.NETCore.Setup.targets",
+        "buildTransitive/netcoreapp3.1/AWSSDK.Extensions.NETCore.Setup.targets",
+        "buildTransitive/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.targets",
         "images/AWSLogo.png",
         "lib/net8.0/AWSSDK.Extensions.NETCore.Setup.dll",
         "lib/net8.0/AWSSDK.Extensions.NETCore.Setup.pdb",
+        "lib/net8.0/AWSSDK.Extensions.NETCore.Setup.xml",
         "lib/netcoreapp3.1/AWSSDK.Extensions.NETCore.Setup.dll",
         "lib/netcoreapp3.1/AWSSDK.Extensions.NETCore.Setup.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Extensions.NETCore.Setup.xml",
         "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll",
-        "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.pdb"
+        "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.pdb",
+        "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.xml"
       ]
     },
-    "AWSSDK.S3/3.7.405.4": {
-      "sha512": "H+BTXyHB5nxS2B3jv/Ur350TLWx5kRk3S1+Tldtr90kB6/FgjvOp4eFgjl6L51f9yMyn6GuODtukt1vJfKJR8w==",
+    "AWSSDK.S3/4.0.0-preview.4": {
+      "sha512": "pyCEtKBH5lSKlibD2shIBKsP4iQuKPFSVWQQloCrfUIN2ht1TnuD+6UYF1a4SPbBBU6xc8JQDamZe05KJWs+7g==",
       "type": "package",
-      "path": "awssdk.s3/3.7.405.4",
+      "path": "awssdk.s3/4.0.0-preview.4",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.S3.CodeAnalysis.dll",
         "analyzers/dotnet/cs/SharedAnalysisCode.dll",
-        "awssdk.s3.3.7.405.4.nupkg.sha512",
+        "awssdk.s3.4.0.0-preview.4.nupkg.sha512",
         "awssdk.s3.nuspec",
         "images/AWSLogo.png",
-        "lib/net35/AWSSDK.S3.dll",
-        "lib/net35/AWSSDK.S3.pdb",
-        "lib/net35/AWSSDK.S3.xml",
-        "lib/net45/AWSSDK.S3.dll",
-        "lib/net45/AWSSDK.S3.pdb",
-        "lib/net45/AWSSDK.S3.xml",
+        "lib/net472/AWSSDK.S3.dll",
+        "lib/net472/AWSSDK.S3.pdb",
+        "lib/net472/AWSSDK.S3.xml",
         "lib/net8.0/AWSSDK.S3.dll",
         "lib/net8.0/AWSSDK.S3.pdb",
         "lib/net8.0/AWSSDK.S3.xml",
@@ -1769,25 +1773,22 @@
         "tools/uninstall.ps1"
       ]
     },
-    "AWSSDK.SimpleNotificationService/3.7.400.40": {
-      "sha512": "5/6eAlEXOL5nhc3RPwgE3zRe/8fSFevsoS538sMwWt49zmwbWoEm2eiVVFbiHtejbLvXBYnjuM0uSFQ/eVKUaQ==",
+    "AWSSDK.SimpleNotificationService/4.0.0-preview.4": {
+      "sha512": "ZSRDYfnoII17axPO4YplcMbl08csGFZxhy/dfxFSqdSujn5sk3YakKwepIheocv3AzFAA+RXllePA27UC18Tsw==",
       "type": "package",
-      "path": "awssdk.simplenotificationservice/3.7.400.40",
+      "path": "awssdk.simplenotificationservice/4.0.0-preview.4",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.SimpleNotificationService.CodeAnalysis.dll",
         "analyzers/dotnet/cs/SharedAnalysisCode.dll",
-        "awssdk.simplenotificationservice.3.7.400.40.nupkg.sha512",
+        "awssdk.simplenotificationservice.4.0.0-preview.4.nupkg.sha512",
         "awssdk.simplenotificationservice.nuspec",
         "images/AWSLogo.png",
-        "lib/net35/AWSSDK.SimpleNotificationService.dll",
-        "lib/net35/AWSSDK.SimpleNotificationService.pdb",
-        "lib/net35/AWSSDK.SimpleNotificationService.xml",
-        "lib/net45/AWSSDK.SimpleNotificationService.dll",
-        "lib/net45/AWSSDK.SimpleNotificationService.pdb",
-        "lib/net45/AWSSDK.SimpleNotificationService.xml",
+        "lib/net472/AWSSDK.SimpleNotificationService.dll",
+        "lib/net472/AWSSDK.SimpleNotificationService.pdb",
+        "lib/net472/AWSSDK.SimpleNotificationService.xml",
         "lib/net8.0/AWSSDK.SimpleNotificationService.dll",
         "lib/net8.0/AWSSDK.SimpleNotificationService.pdb",
         "lib/net8.0/AWSSDK.SimpleNotificationService.xml",
@@ -1801,25 +1802,22 @@
         "tools/uninstall.ps1"
       ]
     },
-    "AWSSDK.SQS/3.7.400.40": {
-      "sha512": "Bu4Jl5hdS4Mq7jwc3XoBFFGscgMuWQiw+mJOMfwEnR7DbOSkt5/YdbmRoY08vHKhQ3GkVKhQrgXLHwUwJ/Qtag==",
+    "AWSSDK.SQS/4.0.0-preview.4": {
+      "sha512": "E4N0OSciBUmmNRYbMw9g+QvGelHcN3oZ1dRTVChSgsmDfQ8fQ5WctMagz1gPg3IaMNTqIX0pSKvoXiDTySEyzw==",
       "type": "package",
-      "path": "awssdk.sqs/3.7.400.40",
+      "path": "awssdk.sqs/4.0.0-preview.4",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.SQS.CodeAnalysis.dll",
         "analyzers/dotnet/cs/SharedAnalysisCode.dll",
-        "awssdk.sqs.3.7.400.40.nupkg.sha512",
+        "awssdk.sqs.4.0.0-preview.4.nupkg.sha512",
         "awssdk.sqs.nuspec",
         "images/AWSLogo.png",
-        "lib/net35/AWSSDK.SQS.dll",
-        "lib/net35/AWSSDK.SQS.pdb",
-        "lib/net35/AWSSDK.SQS.xml",
-        "lib/net45/AWSSDK.SQS.dll",
-        "lib/net45/AWSSDK.SQS.pdb",
-        "lib/net45/AWSSDK.SQS.xml",
+        "lib/net472/AWSSDK.SQS.dll",
+        "lib/net472/AWSSDK.SQS.pdb",
+        "lib/net472/AWSSDK.SQS.xml",
         "lib/net8.0/AWSSDK.SQS.dll",
         "lib/net8.0/AWSSDK.SQS.pdb",
         "lib/net8.0/AWSSDK.SQS.xml",
@@ -3658,10 +3656,10 @@
         "serilog.sinks.amazons3.nuspec"
       ]
     },
-    "Serilog.Sinks.Async/2.0.0": {
-      "sha512": "a+kTyUUxPAOZWKJiNbDqCPMiP0BWBWzObyTpRmGLrgCecgc/YJ+HqYGjsQoS6Sj9cRVXB9hH5O1mTZ0DiewG2w==",
+    "Serilog.Sinks.Async/2.1.0": {
+      "sha512": "SnmRknWsSMgyo9wDXeZZCqSp48kkQYy44taSM6vcpxfiRICzSf09oLKEmVr0RCwQnfd8mJQ2WNN6nvhqf0RowQ==",
       "type": "package",
-      "path": "serilog.sinks.async/2.0.0",
+      "path": "serilog.sinks.async/2.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3677,7 +3675,7 @@
         "lib/netstandard2.0/Serilog.Sinks.Async.dll",
         "lib/netstandard2.0/Serilog.Sinks.Async.xml",
         "serilog-sink-nuget.png",
-        "serilog.sinks.async.2.0.0.nupkg.sha512",
+        "serilog.sinks.async.2.1.0.nupkg.sha512",
         "serilog.sinks.async.nuspec"
       ]
     },

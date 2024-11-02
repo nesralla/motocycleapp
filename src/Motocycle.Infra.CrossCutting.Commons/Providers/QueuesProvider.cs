@@ -16,7 +16,7 @@
 
         public class QueuesProducer
         {
-            public string CreateMotocycleProcess { get; set; }
+            public string CreateMotocycleSender { get; set; }
             public string ClientNotificationSender { get; set; }
         }
         public class TopicProducer

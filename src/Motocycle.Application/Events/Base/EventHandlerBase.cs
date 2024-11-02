@@ -35,7 +35,7 @@ namespace Motocycle.Application.Events.Base
             return await _unitOfWork.CommitAsync();
         }
 
-        public virtual Task Handle(TEvent notification, CancellationToken cancellationToken)
+        public virtual Task Handle(TEvent notification, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }

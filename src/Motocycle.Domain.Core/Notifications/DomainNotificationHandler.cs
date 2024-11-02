@@ -25,6 +25,8 @@ namespace Motocycle.Domain.Core.Notifications
 
         public void Handle(DomainNotification args)
         {
+            LogError(args.Value);
+
             if (!_notifications.Any(x => x.Value.Trim().ToUpper().Equals(args.Value.Trim().ToUpper())))
             {
                 _notifications.Add(args);

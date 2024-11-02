@@ -10,22 +10,15 @@ using Motocycle.Infra.Data.Context;
 using Motocycle.Api.Configurations.HealthChecks;
 using Motocycle.Api.Filter;
 using Motocycle.Infra.CrossCutting.Commons.Extensions;
-using Motocycle.Domain.Validations.Extensions;
 using Motocycle.Api.Configurations.Swagger;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
 using Motocycle.Infra.Data;
 using Motocycle.Api.Middleware;
 using Motocycle.Infra.CrossCutting.Commons.Middlewares;
-using SQS.ServiceBus.Configurations;
 using FluentValidation.AspNetCore;
 using Motocycle.Domain.Validations.ApiErrorLog;
-using Amazon.Extensions.NETCore.Setup;
-using Amazon;
-using Amazon.SimpleNotificationService;
-using Amazon.Runtime;
-using Amazon.SQS;
-using Motocycle.Infra.CrossCutting.MessageBroker.Configuration;
-
+using FluentValidation;
+using SQS.ServiceBus.Configurations;
 namespace Motocycle.Api.Configurations.Api
 {
     internal static class ApiConfig
@@ -62,9 +55,10 @@ namespace Motocycle.Api.Configurations.Api
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                     options.AllowInputFormatterExceptionMessages = true;
                     options.SerializerSettings.Converters.Add(new StringEnumConverter());
-                })
-                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ApiErrorLogValidation>());
+                });
 
+            services.AddValidatorsFromAssemblyContaining<RegisterApiErrorLogValidation>();
+            services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 
 
             services.AddWebApiVersioning();
@@ -82,7 +76,6 @@ namespace Motocycle.Api.Configurations.Api
                             .AllowAnyHeader());
             });
 
-            //services.AddAwsSnsConfiguration(configuration);
             services.AddServiceBusConfiguration(configuration);
 
             services.AddHostedService<Application.MessageBroker.Worker>();

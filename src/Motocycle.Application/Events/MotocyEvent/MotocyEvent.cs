@@ -5,20 +5,15 @@ namespace Motocycle.Application.Events.MotocyEvent
 {
     public class MotocyEvent : EventRequest
     {
-        public CreateMotocyEvent CreateInfo { get; set; }
-        public UpdateMotocyPlateEvent UpdateInfo { get; set; }
+        public CreateMotocycleSqsRequest MotocycleInfo { get; set; }
     }
 
-    public class CreateMotocyEvent
+    public sealed class CreateMotocycleSqsRequest
     {
         public string LicensePlate { get; set; }
         public string MotocyModel { get; set; }
         public int Year { get; set; }
     }
 
-    public class UpdateMotocyPlateEvent
-    {
-        public string LicensePlate { get; set; }
 
-    }
 }

@@ -19,7 +19,13 @@ public static class MessageBrokerConfiguration
         if (services is null) throw new ArgumentNullException(nameof(services));
         if (configuration is null) throw new ArgumentNullException(nameof(configuration));
 
-        services.AddAWSService<IAmazonSimpleNotificationService>();
-        services.AddTransient<IPublishTopic, PublishTopic>();
+        var awsOptions = configuration.GetAWSOptions();
+        awsOptions.Credentials = new BasicAWSCredentials("dummy", "dummy");
+
+        services.AddDefaultAWSOptions(awsOptions);
+        services.AddAWSService<IAmazonSQS>();
+        services.AddTransient<IManagerEndpoint, ManagerEndpoint>();
+        services.AddTransient<IPublishEndpoint, PublishEndpoint>();
+        services.AddTransient<IReceiveEndpoint, ReceiveEndpoint>();
     }
 }

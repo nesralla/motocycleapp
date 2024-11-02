@@ -5,8 +5,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.Core" Version="3.7.400.40" />
-    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.400.40" />
+    <PackageReference Include="AWSSDK.Core" Version="4.0.0-preview.4" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.0-preview.4" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="4.0.0-preview.4" />
+    <PackageReference Include="AWSSDK.SQS" Version="4.0.0-preview.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="6.0.0-preview.4.21253.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.0-rc.2.24473.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
 
   <PropertyGroup>

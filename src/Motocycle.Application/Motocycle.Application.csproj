@@ -10,6 +10,7 @@
 
  <ItemGroup>
     <ProjectReference Include="..\Motocycle.Domain\Motocycle.Domain.csproj" />
+    <ProjectReference Include="..\Motocycle.Infra.CrossCutting.MessageBroker\Motocycle.Infra.CrossCutting.MessageBroker.csproj" />
   </ItemGroup>
   
 </Project>

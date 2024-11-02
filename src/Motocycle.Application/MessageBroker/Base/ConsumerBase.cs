@@ -1,23 +1,26 @@
 ﻿using System;
 using MediatR;
-using SQS.ServiceBus;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Motocycle.Infra.CrossCutting.Commons.Providers;
 using Motocycle.Domain.Core.Interfaces;
 using Motocycle.Domain.Core.Notifications;
 using Motocycle.Application.UseCases.Moto.Request;
-using Motocycle.Infra.CrossCutting.Commons.Extensions;
+using Motocycle.Infra.CrossCutting.MessageBroker.SnsTopic.Interfaces;
 
 namespace Motocycle.Application.MessageBroker.Base
 {
-    public abstract class ConsumerBase(IServiceProvider serviceProvider, QueuesProvider queues)
+    public abstract class ConsumerBase
     {
-        private readonly int _waitTimeSeconds = 5;
-        private readonly IServiceProvider _serviceProvider = serviceProvider;
-        private readonly QueuesProvider.QueuesConsumer _queues = queues.Consumers;
+        private readonly int _waitTimeSeconds = 20;
+        private readonly IServiceProvider _serviceProvider;
+        private readonly QueuesProvider.QueuesConsumer _queues;
         protected IHandler<DomainNotification> Notifications { get; set; }
-
+        protected ConsumerBase(IServiceProvider serviceProvider, QueuesProvider queues)
+        {
+            _queues = queues.Consumers;
+            _serviceProvider = serviceProvider;
+        }
         protected async Task Consume()
         {
             using var scope = _serviceProvider.CreateScope();
