@@ -64,6 +64,22 @@ namespace Motocycle.Domain.Services
 
             return entity;
         }
+        public async Task<Motocy> RemoveMotocycleAsync(Guid id)
+        {
+            var motoccycle = await BaseRepository.GetByIdAsync(id);
+
+            if (motoccycle is null)
+            {
+                Notifications.Handle(DomainNotification.ModelValidation("MOTO_NOTFOUND", "Moto não encontrada"));
+                return default;
+            }
+
+            BaseRepository.Remove(motoccycle);
+
+            return motoccycle;
+
+
+        }
     }
 
 

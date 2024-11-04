@@ -1,5 +1,6 @@
 using AutoMapper;
 using Motocycle.Application.UseCases.ApiErrorLog.Response;
+using Motocycle.Application.UseCases.Delivery.Response;
 using Motocycle.Application.UseCases.Moto.Response;
 using Motocycle.Domain.Models;
 
@@ -21,7 +22,8 @@ namespace Motocycle.Application.AutoMapper
                 .ForMember(dest => dest.Placa, opt => opt.MapFrom(src => src.LicensePlate))
                 .ForMember(dest => dest.Modelo, opt => opt.MapFrom(src => src.MotocyModel))
                 .ForMember(dest => dest.Ano, opt => opt.MapFrom(src => src.Year));
-
+            CreateMap<Deliveryman, DeliverymanResponse>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
         }
     }
 }

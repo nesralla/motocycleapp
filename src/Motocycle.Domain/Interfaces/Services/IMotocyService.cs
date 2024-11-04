@@ -8,6 +8,7 @@ namespace Motocycle.Domain.Interfaces.Services
 
         Task<Motocy> GetByPlateAsync(string plate);
         Task<Motocy> GetDefaultMotoAsync();
+        Task<Motocy> RemoveMotocycleAsync(Guid id);
 
     }
 }
