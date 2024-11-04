@@ -36,29 +36,30 @@ namespace Motocycle.Api.Controllers
         /// <param name="request">The request object containing the parameters for the query</param>
         /// <param name="Modelo"></param>
         /// <param name="Ano"></param>
+        /// <param name="request">The request object containing the parameters for the update</param>
         /// <returns></returns>
         [HttpPost]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(MotoResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
 
-        public async Task<ActionResult<MotoResponse>> CreateMotoAsync([FromBody] CreateMotoRequest request)
+        public async Task<ActionResult<MotoResponse>> CreateMotocycleAsync(CreateMotoRequest request)
         {
-            Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(CreateMotoAsync)}] - request: {request.ToJson()}");
+            Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(CreateMotocycleAsync)}] - request: {request.ToJson()}");
 
             var result = await _mediator.Send(request);
-            return ResponsePost("CreateMotoAsync", result.Id, result);
+            return ResponsePost("CreateMotocycleAsync", result.Id, result);
         }
 
         /// <summary>
         /// Update licnese plate for a Motocycle
         /// </summary>
-        /// <param name="Id"></param>
-        /// <param name="Placa"></param>
+        /// <param name="Id">Guid Id </param>
+        /// <param name="Placa">Placa nova</param>
         /// <returns></returns>
         [HttpPut("{Id}/placa")]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(MotoResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
-        public async Task<ActionResult<MotoResponse>> UpdateLicensePlateByIdAsync([FromRoute] string id, [FromBody] MotoRequest request)
+        public async Task<ActionResult<MotoResponse>> UpdateLicensePlateByIdAsync([FromRoute] string id, UpdateMotocycleLicensePlateRequest request)
         {
             request.Id = Guid.Parse(id);
             Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(UpdateLicensePlateByIdAsync)}] - request: {request.ToJson()}");
@@ -71,7 +72,6 @@ namespace Motocycle.Api.Controllers
         /// <summary>
         /// Get Motos
         /// </summary>
-        /// <param name="Placa"></param>
         /// <returns></returns>
         [HttpGet]
         [SwaggerResponse(StatusCodes.Status200OK, null, typeof(MotoResponse))]
@@ -81,24 +81,41 @@ namespace Motocycle.Api.Controllers
 
             Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(GetMotosAsync)}] - request: ");
 
-            var result = await _mediator.Send(new MotoRequest());
+            var result = await _mediator.Send(new GetMotosRequest());
 
-            return ResponseGet(new List<MotoResponse> { result });
+            return ResponseGet(result);
+        }
+        /// <summary>
+        /// Get Moto by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        [SwaggerResponse(StatusCodes.Status200OK, null, typeof(MotoResponse))]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
+        public async Task<ActionResult<MotoResponse>> GetMotocycleByIdAsync([FromRoute] string id)
+        {
+
+            Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(GetMotocycleByIdAsync)}] - request: ");
+
+            var result = await _mediator.Send(new GetMotocycleByIdRequest { Id = Guid.Parse(id) });
+
+            return ResponseGet(result);
         }
 
-        // /// <summary>
-        // /// Delete Motos
-        // /// </summary>
-        // /// <param name="Id"></param>
-        // /// <returns></returns>
-        // [HttpDelete("motos/{id}")]
-        // [SwaggerResponse(StatusCodes.Status200OK, null, typeof(MotoResponse))]
-        // public async Task<ActionResult<MotoResponse>> DeleteAsync(Guid id)
-        // {
-        //     Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(DeleteAsync)}] - request: {id}");
-        //     await _mediator.Send(new MotoRequest(new Guid(User.GetBankAccountId()), id));
-        //     return ResponseDelete();
-        // }
+        /// <summary>
+        /// Delete Motos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        [SwaggerResponse(StatusCodes.Status200OK, null, typeof(MotoResponse))]
+        public async Task<ActionResult<MotoResponse>> DeleteAsync([FromRoute] string id)
+        {
+            Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(DeleteAsync)}] - request: {id}");
+            await _mediator.Send(new RemoveMotocycleRequest(Guid.Parse(id)));
+            return ResponseDelete();
+        }
 
 
 

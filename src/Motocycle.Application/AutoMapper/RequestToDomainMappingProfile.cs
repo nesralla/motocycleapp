@@ -16,10 +16,19 @@ namespace Motocycle.Application.AutoMapper
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type));
 
             CreateMap<MotoRequest, Motocy>()
-                .ForMember(dest => dest.Identification, opt => opt.MapFrom(src => src.Identification))
-                .ForMember(dest => dest.LicensePlate, opt => opt.MapFrom(src => src.LicensePlate))
-                .ForMember(dest => dest.MotocyModel, opt => opt.MapFrom(src => src.MotocyModel))
-                .ForMember(dest => dest.Year, opt => opt.MapFrom(src => src.Year));
+                .ForMember(dest => dest.Identification, opt => opt.MapFrom(src => src.Identificador))
+                .ForMember(dest => dest.LicensePlate, opt => opt.MapFrom(src => src.Placa))
+                .ForMember(dest => dest.MotocyModel, opt => opt.MapFrom(src => src.Modelo))
+                .ForMember(dest => dest.Year, opt => opt.MapFrom(src => src.Ano));
+
+            CreateMap<GetMotocycleByPlateRequest, Motocy>()
+             .ForMember(dest => dest.LicensePlate, opt => opt.MapFrom(src => src.Placa));
+
+            CreateMap<UpdateMotocycleLicensePlateRequest, Motocy>()
+            .ForMember(dest => dest.LicensePlate, opt => opt.MapFrom(src => src.Placa))
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
+
+            CreateMap<GetMotosRequest, Motocy>();
 
         }
     }

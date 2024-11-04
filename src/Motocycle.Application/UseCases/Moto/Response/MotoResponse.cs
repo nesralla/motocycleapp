@@ -7,10 +7,10 @@ namespace Motocycle.Application.UseCases.Moto.Response
     public class MotoResponse : ResponseBase
     {
         public Guid Id { get; set; }
-        public string Identification { get; set; } // Identificador
-        public int Year { get; set; } // Ano
-        public string MotocyModel { get; set; } // Modelo
-        public string LicensePlate { get; set; } // Placa (única)
+        public string Identificador { get; set; } // Identificador
+        public int Ano { get; set; } // Ano
+        public string Modelo { get; set; } // Modelo
+        public string Placa { get; set; } // Placa (única)
 
     }
 

@@ -17,10 +17,10 @@ namespace Motocycle.Application.AutoMapper
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type));
 
             CreateMap<Motocy, MotoResponse>()
-                .ForMember(dest => dest.Identification, opt => opt.MapFrom(src => src.Identification))
-                .ForMember(dest => dest.LicensePlate, opt => opt.MapFrom(src => src.LicensePlate))
-                .ForMember(dest => dest.MotocyModel, opt => opt.MapFrom(src => src.MotocyModel))
-                .ForMember(dest => dest.Year, opt => opt.MapFrom(src => src.Year));
+                .ForMember(dest => dest.Identificador, opt => opt.MapFrom(src => src.Identification))
+                .ForMember(dest => dest.Placa, opt => opt.MapFrom(src => src.LicensePlate))
+                .ForMember(dest => dest.Modelo, opt => opt.MapFrom(src => src.MotocyModel))
+                .ForMember(dest => dest.Ano, opt => opt.MapFrom(src => src.Year));
 
         }
     }

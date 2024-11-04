@@ -11,10 +11,10 @@ using Motocycle.Domain.Models;
 
 namespace Motocycle.Application.UseCases.Moto.Handlers
 {
-    public class CreateMotocycleUseCase : UseCaseBaseRequestToDomain<MotoRequest, Motocy, MotoResponse>
+    public class UpdateMotocycleLicensePlateUseCase : UseCaseBaseRequestToDomain<UpdateMotocycleLicensePlateRequest, Motocy, MotoResponse>
     {
 
-        public CreateMotocycleUseCase(
+        public UpdateMotocycleLicensePlateUseCase(
             IMapper mapper,
             IMediator mediator,
             IUnitOfWork unitOfWork,
@@ -25,7 +25,7 @@ namespace Motocycle.Application.UseCases.Moto.Handlers
 
         }
 
-        public override async Task<MotoResponse> HandleSafeMode(MotoRequest request, CancellationToken cancellationToken)
+        public override async Task<MotoResponse> HandleSafeMode(UpdateMotocycleLicensePlateRequest request, CancellationToken cancellationToken)
         {
             return await RegisterAsync(request);
 

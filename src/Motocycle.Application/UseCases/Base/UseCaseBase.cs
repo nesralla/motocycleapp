@@ -13,6 +13,7 @@ namespace Motocycle.Application.UseCases.Base
     public abstract class UseCaseBase<TRequest, TResponse> : IRequestHandler<TRequest, TResponse>
         where TRequest : CommandRequest<TResponse>, new()
     {
+        protected string Action;
         protected bool ScapeError;
         protected readonly IMediator _mediator;
         private readonly IUnitOfWork _unitOfWork;
@@ -23,6 +24,7 @@ namespace Motocycle.Application.UseCases.Base
             Notifications = notifications;
             _unitOfWork = unitOfWork;
             _mediator = mediator;
+
         }
 
         protected bool Commit()
@@ -44,9 +46,9 @@ namespace Motocycle.Application.UseCases.Base
             return await _unitOfWork.CommitAsync();
         }
 
-        public abstract Task<TResponse> HandleSafeMode(TRequest request, CancellationToken cancellationToken = default);
+        public abstract Task<TResponse> HandleSafeMode(TRequest request, CancellationToken cancellationToken);
 
-        public virtual async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken = default)
+        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken)
         {
             var result = await HandleSafeMode(request, cancellationToken);
 
@@ -62,7 +64,7 @@ namespace Motocycle.Application.UseCases.Base
             return result;
         }
 
-        protected async Task SetLogInfo(string logInfo)
-            => await Task.Run(() => Notifications.LogInfo(logInfo));
+        protected async Task SetActionAsync(string action)
+            => await Task.Run(() => Action = action);
     }
 }

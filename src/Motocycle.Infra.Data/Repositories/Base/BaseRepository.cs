@@ -63,6 +63,17 @@ namespace Motocycle.Infra.Data.Repositories.Base
         public async Task<TEntity> GetByIdAsync(Guid id)
             => await DbSet.FirstOrDefaultAsync(x => x.Id == id);
 
+        public void Remove(TEntity entity)
+        {
+            DbSet.Remove(entity);
+        }
+
+        public void Update(TEntity entity)
+        {
+            entity.ModifyAt = DateTime.UtcNow;
+            Db.Update(entity);
+        }
+
         public void Dispose()
         {
             Dispose(true);

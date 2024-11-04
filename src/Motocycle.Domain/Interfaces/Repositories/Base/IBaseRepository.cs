@@ -15,5 +15,8 @@ namespace Motocycle.Domain.Interfaces.Repositories.Base
         IQueryable<TEntity> GetAllQueryNoTracking { get; }
 
         Task<bool> ExistsAsync(Guid id);
+        void Update(TEntity entity);
+        void Remove(TEntity entity);
+
     }
 }

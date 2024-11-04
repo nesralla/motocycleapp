@@ -17,16 +17,35 @@ namespace Motocycle.Infra.Data.Repositories
             await DbSet.AddRangeAsync(entities);
             return entities;
         }
+        public async Task<Motocy> AddAsync(Motocy entity)
+        {
+            await DbSet.AddAsync(entity);
+            return entity;
+        }
+        public async Task<Motocy> UpdateAsync(Motocy entity)
+        {
+            DbSet.Update(entity);
+            return entity;
+        }
 
         public async Task DeleteAll()
         {
             var list = await DbSet.ToListAsync();
             DbSet.RemoveRange(list);
         }
+        public async Task Delete(Guid Id)
+        {
+            var motocy = await DbSet.AsNoTracking().FirstOrDefaultAsync(x => x.Id == Id);
+            if (motocy?.Id == null)
+            {
+                throw new InvalidOperationException("Dados Invalidos");
+            }
+            DbSet.Remove(motocy);
+        }
         public async Task<Motocy> GetByPlateAsync(string plate)
         {
             var motocy = await DbSet.AsNoTracking().FirstOrDefaultAsync(x => x.LicensePlate == plate);
-            if (motocy == null)
+            if (motocy?.Id == null)
             {
                 throw new InvalidOperationException("Dados Invalidos");
             }

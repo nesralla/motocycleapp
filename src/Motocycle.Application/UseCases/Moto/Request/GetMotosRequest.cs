@@ -7,12 +7,8 @@ using Motocycle.Domain.Core.Messages;
 
 namespace Motocycle.Application.UseCases.Moto.Request
 {
-    public class MotoRequest : CommandRequest<MotoResponse>
+    public class GetMotosRequest : CommandRequest<List<MotoResponse>>
     {
-        public Guid Id { get; set; }
-        public string Identificador { get; set; }
-        public int Ano { get; set; }
-        public string Modelo { get; set; }
-        public string Placa { get; set; }
+
     }
 }

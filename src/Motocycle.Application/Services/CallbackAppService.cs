@@ -32,9 +32,9 @@ namespace Motocycle.Application.Services
 
         public async Task SyncCallbackInfoAsync(MotoRequest data, CancellationToken cancellationToken = default)
         {
-            Notifications.LogInfo($"[{nameof(MotoRequest)}] - Event: {data.LicensePlate} | Code: {data.Identification}");
+            Notifications.LogInfo($"[{nameof(MotoRequest)}] - Event: {data.Placa} | Code: {data.Identificador}");
 
-            var entity = await _motocyService.GetAllQuery.Include(c => c.LicensePlate).FirstOrDefaultAsync(x => x.LicensePlate.Equals(data.LicensePlate), cancellationToken);
+            var entity = await _motocyService.GetAllQuery.Include(c => c.LicensePlate).FirstOrDefaultAsync(x => x.LicensePlate.Equals(data.Placa), cancellationToken);
 
             if (entity is null)
             {
@@ -44,10 +44,10 @@ namespace Motocycle.Application.Services
                 return;
             }
 
-            entity.Identification = data.Identification;
-            entity.LicensePlate = data.LicensePlate;
-            entity.MotocyModel = data.MotocyModel;
-            entity.Year = data.Year;
+            entity.Identification = data.Identificador;
+            entity.LicensePlate = data.Placa;
+            entity.MotocyModel = data.Modelo;
+            entity.Year = data.Ano;
             entity.CreateAt = DateTime.UtcNow;
             entity.IsClosed = false;
             entity.IsDeleted = false;
