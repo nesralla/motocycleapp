@@ -13,6 +13,8 @@ using Motocycle.Application.UseCases.Moto.Response;
 using Motocycle.Application.Commons.Responses;
 using Motocycle.Application.UseCases.Moto.Request;
 using Motocycle.Infra.CrossCutting.Commons.Extensions;
+using Motocycle.Application.UseCases.Delivery.Response;
+using Motocycle.Application.UseCases.Delivery.Request;
 
 namespace Motocycle.Api.Controllers
 {
@@ -32,17 +34,12 @@ namespace Motocycle.Api.Controllers
         /// <summary>
         /// Create Moto
         /// </summary>
-        /// <param name="Placa"></param>
-        /// <param name="request">The request object containing the parameters for the query</param>
-        /// <param name="Modelo"></param>
-        /// <param name="Ano"></param>
-        /// <param name="request">The request object containing the parameters for the update</param>
         /// <returns></returns>
         [HttpPost]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(MotoResponse))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null, typeof(InternalValidationProblemDetails))]
 
-        public async Task<ActionResult<MotoResponse>> CreateMotocycleAsync(CreateMotoRequest request)
+        public async Task<ActionResult<DeliverymanResponse>> CreateMotocycleAsync(DeliverymanRequest request)
         {
             Notifications.LogInfo($"[{nameof(MotosController)}] [{nameof(CreateMotocycleAsync)}] - request: {request.ToJson()}");
 

@@ -11,7 +11,7 @@ using Motocycle.Application.UseCases.Delivery.Response;
 
 namespace Motocycle.Application.UseCases.Delivery.Handlers
 {
-    public class CreateDeliverymanUseCase : UseCaseBaseRequestToDomain<DeliverymanRequest, Deliveryman, DeliverymanResponse>
+    public class CreateDeliverymanUseCase : UseCaseBaseRequestToDomain<CreateDeliverymanRequest, Deliveryman, DeliverymanResponse>
     {
 
         public CreateDeliverymanUseCase(
@@ -25,7 +25,7 @@ namespace Motocycle.Application.UseCases.Delivery.Handlers
 
         }
 
-        public override async Task<DeliverymanResponse> HandleSafeMode(DeliverymanRequest request, CancellationToken cancellationToken)
+        public override async Task<DeliverymanResponse> HandleSafeMode(CreateDeliverymanRequest request, CancellationToken cancellationToken)
         {
             return await RegisterAsync(request);
 

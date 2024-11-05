@@ -37,6 +37,13 @@ namespace Motocycle.Application.AutoMapper
             .ForMember(dest => dest.DriveLicense, opt => opt.MapFrom(src => src.Numero_Cnh))
             .ForMember(dest => dest.LicenseType, opt => opt.MapFrom(src => src.Tipo_Cnh));
 
+            CreateMap<CreateDeliverymanRequest, Deliveryman>()
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Nome))
+                .ForMember(dest => dest.NationalID, opt => opt.MapFrom(src => src.Cnpj))
+                .ForMember(dest => dest.DateBorn, opt => opt.MapFrom(src => src.Data_Nascimento))
+                .ForMember(dest => dest.DriveLicense, opt => opt.MapFrom(src => src.Numero_Cnh))
+                .ForMember(dest => dest.LicenseType, opt => opt.MapFrom(src => src.Tipo_Cnh));
+
 
         }
     }
